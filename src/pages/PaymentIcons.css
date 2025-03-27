@@ -1,0 +1,104 @@
+.payment-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.payment-icons i,
+.payment-icons .payment-icon {
+  font-size: 24px;
+  padding: 10px 15px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.payment-icons i:hover,
+.payment-icons .payment-icon:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  filter: brightness(1.05);
+}
+
+/* Visa */
+.payment-icons .fa-cc-visa {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  color: #1a1f71;
+  border: 1px solid #e0e0e0;
+}
+
+/* MasterCard */
+.payment-icons .fa-cc-mastercard {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  color: #eb001b;
+  border: 1px solid #e0e0e0;
+}
+
+/* American Express */
+.payment-icons .fa-cc-amex {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  color: #006fcf;
+  border: 1px solid #e0e0e0;
+}
+
+/* PayPal */
+.payment-icons .fa-cc-paypal {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  color: #003087;
+  border: 1px solid #e0e0e0;
+}
+
+/* MoMo */
+.payment-icons .momo {
+  background: linear-gradient(135deg, #e01e84 0%, #d82d8b 100%);
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* VNPay */
+.payment-icons .vnpay {
+  background: linear-gradient(135deg, #0072ff 0%, #0066ff 100%);
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* ZaloPay */
+.payment-icons .zalopay {
+  background: linear-gradient(135deg, #0076ff 0%, #0068ff 100%);
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* COD */
+.payment-icons .cod {
+  background: linear-gradient(135deg, #2ecc71 0%, #28a745 100%);
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Add responsive styles */
+@media (max-width: 768px) {
+  .payment-icons {
+    gap: 10px;
+  }
+  
+  .payment-icons i,
+  .payment-icons .payment-icon {
+    font-size: 20px;
+    padding: 8px 12px;
+    min-width: 50px;
+  }
+}

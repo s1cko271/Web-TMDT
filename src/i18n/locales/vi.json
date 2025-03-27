@@ -1,0 +1,282 @@
+{
+  "navbar": {
+    "home": "Trang chủ",
+    "allProducts": "Tất cả sản phẩm",
+    "categories": "Danh mục",
+    "electronics": "Điện tử",
+    "fashion": "Thời trang",
+    "homeAndKitchen": "Nhà cửa & Nhà bếp",
+    "beauty": "Làm đẹp",
+    "login": "Đăng nhập",
+    "signup": "Đăng ký",
+    "myProfile": "Hồ sơ của tôi",
+    "logout": "Đăng xuất"
+  },
+  "footer": {
+    "about": "Về chúng tôi",
+    "contact": "Liên hệ",
+    "terms": "Điều khoản",
+    "privacy": "Chính sách bảo mật",
+    "copyright": "© {{year}} ShopEase. Tất cả các quyền được bảo lưu.",
+    "description": "Điểm đến duy nhất cho mọi nhu cầu mua sắm của bạn. Sản phẩm chất lượng, giá cả cạnh tranh và dịch vụ khách hàng xuất sắc.",
+    "quickLinks": "Liên kết nhanh",
+    "products": "Sản phẩm",
+    "clothing": "Quần áo",
+    "beautyPersonalCare": "Làm đẹp & Chăm sóc cá nhân",
+    "sportsOutdoors": "Thể thao & Ngoài trời",
+    "contactUs": "Liên hệ với chúng tôi",
+    "address": "Phường Đại Kim, Quận Hoàng Mai, Hà Nội, Việt Nam",
+    "phone": "+1 234 567 8900",
+    "email": "info@shopease.com"
+  },
+  "homePage": {
+    "featuredProducts": "Sản phẩm nổi bật",
+    "topCategories": "Danh mục hàng đầu",
+    "viewAll": "Xem tất cả",
+    "shopNow": "Mua ngay",
+    "heroTitle": "Mua sắm theo các xu hướng mới nhất",
+    "heroSubtitle": "Khám phá bộ sưu tập được tuyển chọn các sản phẩm cao cấp với giá không thể tốt hơn. Từ điện tử đến thời trang, chúng tôi có mọi thứ bạn cần.",
+    "shopByCategory": "Mua sắm theo danh mục",
+    "subscribeNewsletter": "Đăng ký nhận bản tin của chúng tôi",
+    "newsletterDesc": "Nhận thông tin cập nhật mới nhất về sản phẩm mới và các đợt giảm giá sắp tới",
+    "emailPlaceholder": "Địa chỉ email của bạn",
+    "subscribe": "Đăng ký",
+    "products": "Sản phẩm"
+  },
+  "productPage": {
+    "filter": "Bộ lọc",
+    "sort": "Sắp xếp",
+    "price": "Giá",
+    "rating": "Đánh giá",
+    "addToCart": "Thêm vào giỏ hàng",
+    "outOfStock": "Hết hàng",
+    "quickView": "Xem nhanh",
+    "description": "Mô tả",
+    "features": "Tính năng",
+    "reviews": "Đánh giá",
+    "category": "Danh mục",
+    "inStock": "Còn hàng",
+    "available": "có sẵn",
+    "quantity": "Số lượng",
+    "addToWishlist": "Thêm vào danh sách yêu thích",
+    "productNotFound": "Không tìm thấy sản phẩm",
+    "productNotFoundDesc": "Xin lỗi, sản phẩm bạn đang tìm kiếm không tồn tại.",
+    "backToProducts": "Quay lại Sản phẩm",
+    "writeReview": "Viết đánh giá",
+    "noReviews": "Chưa có đánh giá nào. Hãy là người đầu tiên đánh giá sản phẩm này!",
+    "relatedProducts": "Sản phẩm liên quan",
+    "home": "Trang chủ",
+    "products": "Sản phẩm"
+  },
+  "cartPage": {
+    "cart": "Giỏ hàng",
+    "product": "Sản phẩm",
+    "price": "Giá",
+    "quantity": "Số lượng",
+    "total": "Tổng cộng",
+    "checkout": "Tiến hành thanh toán",
+    "continueShopping": "Tiếp tục mua sắm",
+    "emptyCart": "Giỏ hàng của bạn đang trống",
+    "yourShoppingCart": "Giỏ hàng của bạn",
+    "select": "Chọn",
+    "viewProduct": "Xem sản phẩm",
+    "selectAll": "Chọn tất cả",
+    "deselectAll": "Bỏ chọn tất cả",
+    "clearCart": "Xóa giỏ hàng",
+    "orderSummary": "Tóm tắt đơn hàng",
+    "subtotal": "Tạm tính",
+    "shipping": "Phí vận chuyển",
+    "tax": "Thuế",
+    "weAccept": "Chúng tôi chấp nhận:",
+    "emptyCartDesc": "Có vẻ như bạn chưa thêm bất kỳ mặt hàng nào vào giỏ hàng.",
+    "startShopping": "Bắt đầu mua sắm"
+  },
+  "profilePage": {
+    "myProfile": "Hồ sơ của tôi",
+    "manageAccount": "Quản lý thông tin tài khoản",
+    "personalInfo": "Thông tin cá nhân",
+    "address": "Địa chỉ",
+    "payment": "Thanh toán",
+    "name": "Họ và tên",
+    "email": "Email",
+    "phone": "Điện thoại",
+    "bio": "Tiểu sử",
+    "city": "Thành phố",
+    "state": "Tỉnh/Thành",
+    "zipCode": "Mã bưu điện",
+    "save": "Lưu",
+    "updateSuccess": "Cập nhật hồ sơ thành công!",
+    "updateError": "Không thể cập nhật hồ sơ. Vui lòng thử lại.",
+    "fillAllFields": "Vui lòng điền đầy đủ tất cả các trường thanh toán"
+  },
+  "loginPage": {
+    "title": "Đăng nhập vào tài khoản của bạn",
+    "subtitle": "Chào mừng trở lại! Vui lòng nhập thông tin của bạn.",
+    "password": "Mật khẩu",
+    "emailPlaceholder": "Nhập email của bạn",
+    "passwordPlaceholder": "Nhập mật khẩu của bạn",
+    "loggingIn": "Đang đăng nhập...",
+    "noAccount": "Bạn chưa có tài khoản?",
+    "demoAccount": "Tài khoản demo:"
+  },
+  "signupPage": {
+    "title": "Tạo một tài khoản",
+    "subtitle": "Tham gia ngay hôm nay và bắt đầu mua sắm!",
+    "passwordsNotMatch": "Mật khẩu không khớp",
+    "passwordLength": "Mật khẩu phải có ít nhất 6 ký tự",
+    "namePlaceholder": "Nhập họ và tên của bạn",
+    "passwordPlaceholder": "Tạo mật khẩu",
+    "confirmPassword": "Xác nhận mật khẩu",
+    "confirmPasswordPlaceholder": "Xác nhận mật khẩu của bạn",
+    "creatingAccount": "Đang tạo tài khoản...",
+    "haveAccount": "Bạn đã có tài khoản?"
+  },
+  "language": {
+    "english": "Tiếng Anh",
+    "vietnamese": "Tiếng Việt"
+  },
+  "products": {
+    "names": {
+      "1": "Bút bi xanh",
+      "2": "Bút chì gỗ",
+      "3": "Bộ bút gel",
+      "4": "Bút gel xóa được",
+      "5": "Bút lông dầu",
+      "6": "Bộ bút dạ quang",
+      "7": "Băng xóa",
+      "8": "Bộ bút màu"
+    },
+    "1": {
+      "description": "Tai nghe không dây chất lượng cao với công nghệ khử tiếng ồn và thời lượng pin 20 giờ. Hoàn hảo cho những người yêu nhạc và chuyên gia.",
+      "features": {
+        "0": "Khử tiếng ồn",
+        "1": "Thời lượng pin 20 giờ",
+        "2": "Bluetooth 5.0",
+        "3": "Micrô tích hợp"
+      }
+    },
+    "2": {
+      "description": "Bút chì gỗ cổ điển với chì chất lượng cao cho nét viết sạch sẽ, chính xác. Lý tưởng cho phác thảo, vẽ và các công việc viết hàng ngày.",
+      "features": {
+        "0": "Chì loại HB",
+        "1": "Dễ dàng gọt",
+        "2": "Hình lục giác tránh lăn",
+        "3": "Gỗ thân thiện với môi trường"
+      }
+    },
+    "3": {
+      "description": "Bộ bút gel cao cấp với nhiều màu sắc tươi sáng và trải nghiệm viết mượt mà. Hoàn hảo cho việc ghi chép, viết nhật ký hoặc các dự án viết sáng tạo.",
+      "features": {
+        "0": "Công thức mực gel mượt mà",
+        "1": "Nhiều màu sắc tươi sáng",
+        "2": "Cầm nắm thoải mái",
+        "3": "Mực khô nhanh"
+      }
+    },
+    "4": {
+      "description": "Bút gel xóa được với trải nghiệm viết mượt mà và khả năng xóa lỗi sạch sẽ. Hoàn hảo cho học sinh, chuyên gia và bất kỳ ai đánh giá cao sự chính xác trong bài viết của họ.",
+      "features": {
+        "0": "Công thức mực xóa được",
+        "1": "Cầm nắm thoải mái",
+        "2": "Đầu bút 0.7mm",
+        "3": "Thiết kế có thể thu vào"
+      }
+    },
+    "5": {
+      "description": "Bút lông dầu với mực khô nhanh, không thấm nước viết được trên hầu hết các bề mặt. Lý tưởng cho việc dán nhãn, đánh dấu và các dự án sáng tạo.",
+      "features": {
+        "0": "Mực không thấm nước",
+        "1": "Công thức khô nhanh",
+        "2": "Viết được trên nhiều bề mặt",
+        "3": "Đầu bút vát bền"
+      }
+    },
+    "6": {
+      "description": "Bộ bút dạ quang với màu sắc huỳnh quang để nhấn mạnh văn bản quan trọng. Hoàn hảo cho học sinh, giáo viên và chuyên gia văn phòng.",
+      "features": {
+        "0": "Màu sắc huỳnh quang",
+        "1": "Đầu bút vát cho các độ rộng đường kẻ khác nhau",
+        "2": "Công thức mực khô nhanh",
+        "3": "Mực không độc hại"
+      }
+    },
+    "7": {
+      "description": "Băng xóa tiện lợi giúp sửa lỗi nhanh chóng và sạch sẽ. Hoàn hảo cho học sinh, nhân viên văn phòng và bất kỳ ai cần sửa lỗi gọn gàng.",
+      "features": {
+        "0": "Xóa sạch sẽ",
+        "1": "Dễ sử dụng",
+        "2": "Thiết kế nhỏ gọn",
+        "3": "Băng xóa bền lâu"
+      }
+    },
+    "8": {
+      "description": "Bộ bút màu sống động với mực chảy mượt mà cho các dự án sáng tạo, ghi chép và đánh dấu. Hoàn hảo cho học sinh, nghệ sĩ và sử dụng văn phòng.",
+      "features": {
+        "0": "Nhiều màu sắc sống động",
+        "1": "Mực chảy mượt mà",
+        "2": "Đầu bút mảnh cho công việc chi tiết",
+        "3": "Công thức mực không độc hại"
+      }
+    }
+  },
+  "checkoutPage": {
+    "checkout": "Thanh toán",
+    "shippingInformation": "Thông tin vận chuyển",
+    "firstName": "Tên",
+    "lastName": "Họ",
+    "emailAddress": "Địa chỉ email",
+    "address": "Địa chỉ",
+    "city": "Thành phố",
+    "state": "Tỉnh/Thành",
+    "zipCode": "Mã bưu điện",
+    "country": "Quốc gia",
+    "paymentInformation": "Thông tin thanh toán",
+    "nameOnCard": "Tên trên thẻ",
+    "cardNumber": "Số thẻ",
+    "expirationMonth": "Tháng hết hạn",
+    "expirationYear": "Năm hết hạn",
+    "cvv": "Mã CVV",
+    "month": "Tháng",
+    "year": "Năm",
+    "placeOrder": "Đặt hàng",
+    "backToCart": "Quay lại giỏ hàng",
+    "orderSummary": "Tóm tắt đơn hàng",
+    "subtotal": "Tạm tính",
+    "shipping": "Phí vận chuyển",
+    "tax": "Thuế",
+    "total": "Tổng cộng",
+    "weAccept": "Chúng tôi chấp nhận:",
+    "orderSuccess": "Đặt hàng thành công!",
+    "noItemsSelected": "Không có mặt hàng nào được chọn để thanh toán. Vui lòng chọn các mặt hàng trong giỏ hàng của bạn trước khi tiến hành.",
+    "unitedStates": "Hoa Kỳ",
+    "canada": "Canada",
+    "unitedKingdom": "Vương quốc Anh",
+    "australia": "Úc",
+    "germany": "Đức",
+    "france": "Pháp",
+    "vietnam": "Việt Nam",
+    "qty": "SL:",
+    "momo": "Ví MoMo",
+    "vnpay": "VNPay",
+    "zalopay": "ZaloPay",
+    "cod": "Thanh toán khi nhận hàng"
+  },
+  "productDetail": {
+    "category": "Danh mục",
+    "inStock": "Còn hàng",
+    "available": "có sẵn",
+    "quantity": "Số lượng",
+    "addToCart": "Thêm vào giỏ hàng",
+    "addToWishlist": "Thêm vào danh sách yêu thích",
+    "description": "Mô tả",
+    "features": "Tính năng",
+    "reviews": "Đánh giá",
+    "noReviews": "Chưa có đánh giá nào. Hãy là người đầu tiên đánh giá sản phẩm này!",
+    "writeReview": "Viết đánh giá",
+    "productNotFound": "Không tìm thấy sản phẩm",
+    "productNotFoundDesc": "Xin lỗi, sản phẩm bạn đang tìm kiếm không tồn tại.",
+    "backToProducts": "Quay lại Sản phẩm",
+    "home": "Trang chủ",
+    "products": "Sản phẩm"
+  }
+}

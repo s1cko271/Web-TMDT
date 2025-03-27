@@ -1,0 +1,224 @@
+{
+  "navbar": {
+    "home": "Home",
+    "allProducts": "All Products",
+    "categories": "Categories",
+    "electronics": "Electronics",
+    "fashion": "Fashion",
+    "homeAndKitchen": "Home & Kitchen",
+    "beauty": "Beauty",
+    "login": "Login",
+    "signup": "Sign Up",
+    "myProfile": "My Profile",
+    "logout": "Logout"
+  },
+  "footer": {
+    "about": "About Us",
+    "contact": "Contact",
+    "terms": "Terms",
+    "privacy": "Privacy Policy",
+    "copyright": "© {{year}} ShopEase. All rights reserved.",
+    "description": "Your one-stop destination for all your shopping needs. Quality products, competitive prices, and excellent customer service.",
+    "quickLinks": "Quick Links",
+    "products": "Products",
+    "clothing": "Clothing",
+    "beautyPersonalCare": "Beauty & Personal Care",
+    "sportsOutdoors": "Sports & Outdoors",
+    "contactUs": "Contact Us",
+    "address": "Dai Kim Ward, Hoang Mai District, Hanoi, Vietnam.",
+    "phone": "+1 234 567 8900",
+    "email": "info@shopease.com"
+  },
+  "homePage": {
+    "featuredProducts": "Featured Products",
+    "topCategories": "Top Categories",
+    "viewAll": "View All",
+    "shopNow": "Shop Now",
+    "heroTitle": "Shop the Latest Trends",
+    "heroSubtitle": "Discover our curated collection of premium products at unbeatable prices. From electronics to fashion, we've got everything you need.",
+    "shopByCategory": "Shop by Category",
+    "subscribeNewsletter": "Subscribe to Our Newsletter",
+    "newsletterDesc": "Get the latest updates on new products and upcoming sales",
+    "emailPlaceholder": "Your email address",
+    "subscribe": "Subscribe",
+    "products": "Products"
+  },
+  "productPage": {
+    "filter": "Filter",
+    "sort": "Sort",
+    "price": "Price",
+    "rating": "Rating",
+    "addToCart": "Add to Cart",
+    "outOfStock": "Out of Stock",
+    "quickView": "Quick View"
+  },
+  "cartPage": {
+    "cart": "Cart",
+    "product": "Product",
+    "price": "Price",
+    "quantity": "Quantity",
+    "total": "Total",
+    "checkout": "Proceed to Checkout",
+    "continueShopping": "Continue Shopping",
+    "emptyCart": "Your cart is empty",
+    "yourShoppingCart": "Your Shopping Cart",
+    "select": "Select",
+    "viewProduct": "View product",
+    "selectAll": "Select All",
+    "deselectAll": "Deselect All",
+    "clearCart": "Clear Cart",
+    "orderSummary": "Order Summary",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "tax": "Tax",
+    "weAccept": "We Accept:",
+    "emptyCartDesc": "Looks like you haven't added any items to your cart yet.",
+    "startShopping": "Start Shopping"
+  },
+  "profilePage": {
+    "myProfile": "My Profile",
+    "manageAccount": "Manage Account Information",
+    "personalInfo": "Personal Information",
+    "address": "Address",
+    "payment": "Payment",
+    "name": "Full Name",
+    "email": "Email",
+    "phone": "Phone",
+    "bio": "Bio",
+    "city": "City",
+    "state": "State",
+    "zipCode": "Zip Code",
+    "save": "Save",
+    "updateSuccess": "Profile updated successfully!",
+    "updateError": "Failed to update profile. Please try again.",
+    "fillAllFields": "Please fill in all payment fields"
+  },
+  "loginPage": {
+    "title": "Login to Your Account",
+    "subtitle": "Welcome back! Please enter your details.",
+    "password": "Password",
+    "emailPlaceholder": "Enter your email",
+    "passwordPlaceholder": "Enter your password",
+    "loggingIn": "Logging in...",
+    "noAccount": "Don't have an account?",
+    "demoAccount": "Demo Account:"
+  },
+  "signupPage": {
+    "title": "Create an Account",
+    "subtitle": "Join us today and start shopping!",
+    "passwordsNotMatch": "Passwords do not match",
+    "passwordLength": "Password must be at least 6 characters long",
+    "namePlaceholder": "Enter your full name",
+    "passwordPlaceholder": "Create a password",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordPlaceholder": "Confirm your password",
+    "creatingAccount": "Creating Account...",
+    "haveAccount": "Already have an account?"
+  },
+  "language": {
+    "english": "English",
+    "vietnamese": "Vietnamese"
+  },
+  "productDetail": {
+    "category": "Category",
+    "inStock": "In Stock",
+    "available": "available",
+    "quantity": "Quantity",
+    "addToCart": "Add to Cart",
+    "addToWishlist": "Add to Wishlist",
+    "description": "Description",
+    "features": "Features",
+    "reviews": "Reviews",
+    "noReviews": "No reviews yet. Be the first to review this product!",
+    "writeReview": "Write a Review",
+    "productNotFound": "Product Not Found",
+    "productNotFoundDesc": "Sorry, the product you are looking for does not exist.",
+    "backToProducts": "Back to Products",
+    "home": "Home",
+    "products": "Products"
+  },
+  "products": {
+    "names": {
+      "1": "Blue Ballpoint Pen",
+      "2": "Wooden Pencil",
+      "3": "Gel Pen Set",
+      "4": "Erasable Gel Pen",
+      "5": "Permanent Marker",
+      "6": "Highlighter Set",
+      "7": "Correction Tape",
+      "8": "Colored Marker Set"
+    },
+    "1": {
+      "description": "High-quality blue ballpoint pen with smooth writing experience and comfortable grip. Perfect for everyday writing tasks at school or office.",
+      "features": {
+        "0": "Smooth ink flow",
+        "1": "Comfortable grip",
+        "2": "0.5mm fine point",
+        "3": "Durable plastic body"
+      }
+    },
+    "2": {
+      "description": "Classic wooden pencil with high-quality lead for clean, precise writing. Ideal for sketching, drawing, and everyday writing tasks.",
+      "features": {
+        "0": "HB grade lead",
+        "1": "Easy to sharpen",
+        "2": "Hexagonal shape prevents rolling",
+        "3": "Environmentally friendly wood"
+      }
+    },
+    "3": {
+      "description": "Premium gel pen set with vibrant colors and smooth writing experience. Perfect for note-taking, journaling, or creative writing projects.",
+      "features": {
+        "0": "Smooth gel ink formula",
+        "1": "Multiple vibrant colors",
+        "2": "Comfortable grip",
+        "3": "Quick-drying ink"
+      }
+    },
+    "4": {
+      "description": "Erasable gel pen with smooth writing experience and ability to erase mistakes cleanly. Perfect for students, professionals, and anyone who values precision in their writing.",
+      "features": {
+        "0": "Erasable ink formula",
+        "1": "Comfortable grip",
+        "2": "0.7mm medium point",
+        "3": "Retractable design"
+      }
+    },
+    "5": {
+      "description": "Permanent marker with quick-drying, waterproof ink that writes on almost any surface. Ideal for labeling, marking, and creative projects.",
+      "features": {
+        "0": "Waterproof ink",
+        "1": "Quick-drying formula",
+        "2": "Writes on multiple surfaces",
+        "3": "Durable chisel tip"
+      }
+    },
+    "6": {
+      "description": "Vibrant highlighter set with fluorescent colors for emphasizing important text. Perfect for students, teachers, and office professionals.",
+      "features": {
+        "0": "Fluorescent colors",
+        "1": "Chisel tip for different line widths",
+        "2": "Quick-drying formula",
+        "3": "Non-toxic ink"
+      }
+    },
+    "7": {
+      "description": "Convenient correction tape for quick and clean error correction. Perfect for students, office workers, and anyone who needs to make neat corrections.",
+      "features": {
+        "0": "Clean correction",
+        "1": "Easy to use",
+        "2": "Compact design",
+        "3": "Long-lasting tape"
+      }
+    },
+    "8": {
+      "description": "Vibrant colored marker set with smooth ink flow for creative projects, note-taking, and highlighting. Perfect for students, artists, and office use.",
+      "features": {
+        "0": "Multiple vibrant colors",
+        "1": "Smooth ink flow",
+        "2": "Fine tip for detailed work",
+        "3": "Non-toxic ink formula"
+      }
+    }
+  }
+}
