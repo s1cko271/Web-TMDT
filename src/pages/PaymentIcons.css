@@ -18,8 +18,12 @@
   align-items: center;
   justify-content: center;
   min-width: 60px;
+  min-height: 40px;
   font-weight: 600;
   letter-spacing: 0.5px;
+  background-size: 80% auto;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .payment-icons i:hover,
@@ -31,62 +35,39 @@
 
 /* Visa */
 .payment-icons .fa-cc-visa {
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-  color: #1a1f71;
+  background-image: url('../assets/payment-icons/visa-svgrepo-com.svg');
+  background-color: #ffffff;
   border: 1px solid #e0e0e0;
-}
-
-/* MasterCard */
-.payment-icons .fa-cc-mastercard {
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-  color: #eb001b;
-  border: 1px solid #e0e0e0;
-}
-
-/* American Express */
-.payment-icons .fa-cc-amex {
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-  color: #006fcf;
-  border: 1px solid #e0e0e0;
-}
-
-/* PayPal */
-.payment-icons .fa-cc-paypal {
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-  color: #003087;
-  border: 1px solid #e0e0e0;
+  color: transparent;
+  width: 70px;
+  height: 45px;
 }
 
 /* MoMo */
 .payment-icons .momo {
-  background: linear-gradient(135deg, #e01e84 0%, #d82d8b 100%);
-  color: white;
-  font-weight: bold;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  background-image: url('../assets/payment-icons/momo_square_pinkbg.svg');
+  background-color: transparent;
+  color: transparent;
+  width: 70px;
+  height: 45px;
 }
 
 /* VNPay */
 .payment-icons .vnpay {
-  background: linear-gradient(135deg, #0072ff 0%, #0066ff 100%);
-  color: white;
-  font-weight: bold;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  background-image: url('../assets/payment-icons/VNPAY_id-sVSMjm2_1.svg');
+  background-color: transparent;
+  color: transparent;
+  width: 70px;
+  height: 45px;
 }
 
 /* ZaloPay */
 .payment-icons .zalopay {
-  background: linear-gradient(135deg, #0076ff 0%, #0068ff 100%);
-  color: white;
-  font-weight: bold;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-/* COD */
-.payment-icons .cod {
-  background: linear-gradient(135deg, #2ecc71 0%, #28a745 100%);
-  color: white;
-  font-weight: bold;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  background-image: url('../assets/payment-icons/Logo ZaloPay.svg');
+  background-color: transparent;
+  color: transparent;
+  width: 70px;
+  height: 45px;
 }
 
 /* Add responsive styles */

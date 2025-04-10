@@ -27,7 +27,7 @@ const ProductDetailPage = () => {
           ...response.data,
           price: response.data.unit_price,
           stock: response.data.stock_quantity,
-          image: response.data.image_url,
+          image: response.data.image_url ? (response.data.image_url.startsWith('/') ? response.data.image_url : `/${response.data.image_url}`) : '/images/sp1.jpg',
           rating: 4.5, // Default rating since it's not in the database
           category: 'School Supplies',
           features: [response.data.status]

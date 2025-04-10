@@ -5,8 +5,14 @@ const dotenv = require('dotenv');
 // Load environment variables
 dotenv.config();
 
+// Import database connection
+const db = require('./config/db');
+
 // Import routes
 const productRoutes = require('./routes/products');
+const categoryRoutes = require('./routes/categories');
+const cartRoutes = require('./routes/cart');
+const userRoutes = require('./routes/users');
 
 // Initialize express app
 const app = express();
@@ -18,14 +24,48 @@ app.use(express.static('images')); // Serve static images
 
 // Routes
 app.use('/api/products', productRoutes);
+app.use('/api/categories', categoryRoutes);
+app.use('/api/cart', cartRoutes);
+app.use('/api/users', userRoutes);
 
 // Default route
 app.get('/', (req, res) => {
   res.send('School Store API is running');
 });
 
-// Start server
+// Start server after ensuring database connection
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+
+// Function to start the server
+async function startServer() {
+  try {
+    // Test database connection before starting server
+    const connection = await db.getConnection();
+    console.log('Database connection established successfully');
+    connection.release();
+    
+    // Start the server after successful database connection
+    const server = app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    }).on('error', (err) => {
+      if (err.code === 'EADDRINUSE') {
+        // If port is in use, try another port
+        const newPort = parseInt(PORT) + 1;
+        console.log(`Port ${PORT} is already in use, trying port ${newPort}...`);
+        server.close();
+        app.listen(newPort, () => {
+          console.log(`Server running on port ${newPort}`);
+        });
+      } else {
+        console.error('Server error:', err);
+      }
+    });
+  } catch (error) {
+    console.error('Failed to connect to the database:', error.message);
+    console.log('Retrying database connection in 5 seconds...');
+    setTimeout(startServer, 5000); // Retry after 5 seconds
+  }
+}
+
+// Start the server
+startServer();

@@ -46,11 +46,17 @@
   "productPage": {
     "filter": "Filter",
     "sort": "Sort",
+    "sortBy": "Sort By",
+    "featured": "Featured",
+    "priceLow": "Price: Low to High",
+    "priceHigh": "Price: High to Low",
     "price": "Price",
     "rating": "Rating",
     "addToCart": "Add to Cart",
     "outOfStock": "Out of Stock",
-    "quickView": "Quick View"
+    "quickView": "Quick View",
+    "noProductsFound": "No products found matching your criteria.",
+    "clearFilters": "Clear Filters"
   },
   "cartPage": {
     "cart": "Cart",
@@ -146,7 +152,49 @@
       "5": "Permanent Marker",
       "6": "Highlighter Set",
       "7": "Correction Tape",
-      "8": "Colored Marker Set"
+      "8": "Colored Marker Set",
+      "9": "24-Color Pencil Set",
+      "10": "Crayon Set",
+      "11": "Transparent Ruler",
+      "12": "Set Square",
+      "13": "Flexible Ruler",
+      "14": "Drawing Compass",
+      "15": "Scientific Calculator",
+      "16": "Lined Slate Board",
+      "17": "Notebook",
+      "18": "Sticky Notes",
+      "19": "Desk Organizer",
+      "20": "Scissors",
+      "21": "Glue Stick",
+      "22": "Liquid Glue",
+      "23": "Stapler",
+      "24": "Hole Punch",
+      "25": "Binder Clips",
+      "26": "Document Folder",
+      "27": "File Box",
+      "28": "Desk Lamp",
+      "29": "Desk Calendar",
+      "30": "Whiteboard",
+      "31": "Whiteboard Markers",
+      "32": "Pencil Case",
+      "33": "Pencil Box",
+      "34": "Paper Clips",
+      "35": "Binder Clips Set",
+      "36": "Staples Box",
+      "37": "Clear Tape",
+      "38": "Double-sided Tape",
+      "39": "Masking Tape",
+      "40": "Printer Paper",
+      "41": "Colored Paper",
+      "42": "Graph Paper",
+      "43": "Sticky Bookmarks",
+      "44": "Desk Pad",
+      "45": "Pen Holder",
+      "46": "Bookends",
+      "47": "Book Cover",
+      "48": "Mini Bookshelf",
+      "49": "Magnetic Whiteboard",
+      "50": "Portable Printer"
     },
     "1": {
       "description": "High-quality blue ballpoint pen with smooth writing experience and comfortable grip. Perfect for everyday writing tasks at school or office.",
@@ -218,6 +266,384 @@
         "1": "Smooth ink flow",
         "2": "Fine tip for detailed work",
         "3": "Non-toxic ink formula"
+      }
+    },
+    "9": {
+      "description": "Set of 24 colored pencils, high quality, easy to color, suitable for drawing.",
+      "features": {
+        "0": "Vibrant colors",
+        "1": "Smooth coloring",
+        "2": "Break-resistant",
+        "3": "Easy to sharpen"
+      }
+    },
+    "10": {
+      "description": "Set of 12 crayons, easy to use, non-smudging, suitable for children.",
+      "features": {
+        "0": "Bright colors",
+        "1": "Non-toxic",
+        "2": "Easy grip for small hands",
+        "3": "Washable formula"
+      }
+    },
+    "11": {
+      "description": "20cm transparent plastic ruler, easy to see through for precise measurements.",
+      "features": {
+        "0": "Clear transparent material",
+        "1": "Precise measurements",
+        "2": "Durable plastic",
+        "3": "Lightweight design"
+      }
+    },
+    "12": {
+      "description": "45-degree plastic set square, suitable for students drawing geometric shapes.",
+      "features": {
+        "0": "Precise 45-degree angle",
+        "1": "Clear markings",
+        "2": "Durable plastic material",
+        "3": "Smooth edges"
+      }
+    },
+    "13": {
+      "description": "Flexible curve ruler that can be bent without breaking, convenient for drawing shapes.",
+      "features": {
+        "0": "Flexible material",
+        "1": "Maintains shape when bent",
+        "2": "Easy to use",
+        "3": "Ideal for curved lines"
+      }
+    },
+    "14": {
+      "description": "Compass for drawing accurate circles, comes with pencil lead.",
+      "features": {
+        "0": "Precise circle drawing",
+        "1": "Adjustable radius",
+        "2": "Includes pencil lead",
+        "3": "Durable metal construction"
+      }
+    },
+    "15": {
+      "description": "Casio FX-570VN Plus calculator with multiple calculation functions.",
+      "features": {
+        "0": "Multiple calculation functions",
+        "1": "Natural display",
+        "2": "Long battery life",
+        "3": "Approved for exams"
+      }
+    },
+    "16": {
+      "description": "Small lined slate board for easier writing practice.",
+      "features": {
+        "0": "Lined surface",
+        "1": "Compact size",
+        "2": "Easy to erase",
+        "3": "Durable construction"
+      }
+    },
+    "17": {
+      "description": "Set of 10 white chalk pieces, dust-free, easy to write on blackboards.",
+      "features": {
+        "0": "Dust-free formula",
+        "1": "Smooth writing",
+        "2": "High visibility",
+        "3": "Long-lasting"
+      }
+    },
+    "18": {
+      "description": "Whiteboard marker with bold ink, easy to erase.",
+      "features": {
+        "0": "Bold ink",
+        "1": "Quick-drying",
+        "2": "Easy to erase",
+        "3": "Non-toxic formula"
+      }
+    },
+    "19": {
+      "description": "Small, portable eraser that doesn't tear paper.",
+      "features": {
+        "0": "Compact size",
+        "1": "Gentle on paper",
+        "2": "Erases cleanly",
+        "3": "Long-lasting material"
+      }
+    },
+    "20": {
+      "description": "Compact pencil sharpener, easy to use, suitable for students.",
+      "features": {
+        "0": "Compact design",
+        "1": "Sharp blade",
+        "2": "Easy to empty",
+        "3": "Portable size"
+      }
+    },
+    "21": {
+      "description": "96-page lined notebook for elementary students, beautiful white paper.",
+      "features": {
+        "0": "Lined pages",
+        "1": "High-quality paper",
+        "2": "Durable binding",
+        "3": "96 pages"
+      }
+    },
+    "22": {
+      "description": "200-page ruled notebook, suitable for students and college note-taking.",
+      "features": {
+        "0": "200 pages",
+        "1": "Ruled lines",
+        "2": "Quality paper",
+        "3": "Sturdy cover"
+      }
+    },
+    "23": {
+      "description": "Compact 100-page notebook, perfect for quick notes.",
+      "features": {
+        "0": "Compact size",
+        "1": "100 pages",
+        "2": "Easy to carry",
+        "3": "Quality paper"
+      }
+    },
+    "24": {
+      "description": "A4 size test paper, suitable for classroom exams.",
+      "features": {
+        "0": "A4 size",
+        "1": "Quality paper",
+        "2": "Ruled lines",
+        "3": "Perfect for exams"
+      }
+    },
+    "25": {
+      "description": "Scratch paper pad, ideal for homework and note-taking.",
+      "features": {
+        "0": "Economical paper",
+        "1": "Multiple sheets",
+        "2": "Convenient size",
+        "3": "Recyclable material"
+      }
+    },
+    "26": {
+      "description": "Set of colored craft paper for crafts and decoration.",
+      "features": {
+        "0": "Multiple colors",
+        "1": "Quality paper",
+        "2": "Easy to cut",
+        "3": "Perfect for crafts"
+      }
+    },
+    "27": {
+      "description": "500-sheet A4 paper, high quality, suitable for printing and handwriting.",
+      "features": {
+        "0": "500 sheets",
+        "1": "A4 size",
+        "2": "Premium quality",
+        "3": "Multipurpose use"
+      }
+    },
+    "28": {
+      "description": "Multi-colored note paper, helps categorize information easily.",
+      "features": {
+        "0": "Multiple colors",
+        "1": "Convenient size",
+        "2": "Quality paper",
+        "3": "Easy organization"
+      }
+    },
+    "29": {
+      "description": "Sticky notes with light adhesive, easy to attach and remove without leaving residue.",
+      "features": {
+        "0": "Sticky backing",
+        "1": "No residue",
+        "2": "Multiple sheets",
+        "3": "Convenient size"
+      }
+    },
+    "30": {
+      "description": "Set of 10 plastic folders for safe document storage.",
+      "features": {
+        "0": "10 folders",
+        "1": "Durable plastic",
+        "2": "Document protection",
+        "3": "Various colors"
+      }
+    },
+    "31": {
+      "description": "Thin plastic document cover to prevent wrinkling and tearing.",
+      "features": {
+        "0": "Transparent material",
+        "1": "Document protection",
+        "2": "Durable plastic",
+        "3": "Lightweight design"
+      }
+    },
+    "32": {
+      "description": "Fabric pencil case with multiple compartments, suitable for students and office workers.",
+      "features": {
+        "0": "Multiple compartments",
+        "1": "Durable fabric",
+        "2": "Compact design",
+        "3": "Easy to carry"
+      }
+    },
+    "33": {
+      "description": "Multi-compartment pencil box for organized storage of pens and school supplies.",
+      "features": {
+        "0": "Multiple compartments",
+        "1": "Durable construction",
+        "2": "Organized storage",
+        "3": "Compact design"
+      }
+    },
+    "34": {
+      "description": "Box of 100 paper clips for keeping documents and papers organized.",
+      "features": {
+        "0": "100 clips",
+        "1": "Durable metal",
+        "2": "Various sizes",
+        "3": "Organized storage"
+      }
+    },
+    "35": {
+      "description": "Box of 50 binder clips for securing thick documents.",
+      "features": {
+        "0": "50 clips",
+        "1": "Strong grip",
+        "2": "Durable metal",
+        "3": "Reusable design"
+      }
+    },
+    "36": {
+      "description": "Box of 1000 staples for standard staplers.",
+      "features": {
+        "0": "1000 staples",
+        "1": "Standard size",
+        "2": "Quality metal",
+        "3": "Reliable performance"
+      }
+    },
+    "37": {
+      "description": "1.8cm clear tape roll, suitable for office and school use.",
+      "features": {
+        "0": "Clear transparent",
+        "1": "1.8cm width",
+        "2": "Strong adhesive",
+        "3": "Easy to tear"
+      }
+    },
+    "38": {
+      "description": "1.5cm double-sided tape, strong adhesive, convenient for various uses.",
+      "features": {
+        "0": "Double-sided adhesive",
+        "1": "1.5cm width",
+        "2": "Strong bond",
+        "3": "Easy to use"
+      }
+    },
+    "39": {
+      "description": "40ml liquid glue, convenient for paper gluing and crafts.",
+      "features": {
+        "0": "40ml capacity",
+        "1": "Non-toxic formula",
+        "2": "Easy application",
+        "3": "Strong bond"
+      }
+    },
+    "40": {
+      "description": "50ml clear adhesive, suitable for office and school use.",
+      "features": {
+        "0": "50ml capacity",
+        "1": "Clear formula",
+        "2": "Quick drying",
+        "3": "Strong adhesion"
+      }
+    },
+    "41": {
+      "description": "Stainless steel scissors with sturdy plastic handles for easy paper cutting.",
+      "features": {
+        "0": "Stainless steel blades",
+        "1": "Comfortable grip",
+        "2": "Sharp cutting edge",
+        "3": "Durable construction"
+      }
+    },
+    "42": {
+      "description": "Wall-mounted schedule board for organizing class schedules efficiently.",
+      "features": {
+        "0": "Wall-mountable",
+        "1": "Clear layout",
+        "2": "Erasable surface",
+        "3": "Durable material"
+      }
+    },
+    "43": {
+      "description": "Study timer to help manage study time and test-taking efficiently.",
+      "features": {
+        "0": "Accurate timing",
+        "1": "Easy to set",
+        "2": "Clear display",
+        "3": "Compact design"
+      }
+    },
+    "44": {
+      "description": "Anti-hunchback backpack designed for elementary and middle school students.",
+      "features": {
+        "0": "Ergonomic design",
+        "1": "Back support",
+        "2": "Multiple compartments",
+        "3": "Durable material"
+      }
+    },
+    "45": {
+      "description": "3-tier insulated lunch box that keeps food warm, convenient for school.",
+      "features": {
+        "0": "3 separate compartments",
+        "1": "Thermal insulation",
+        "2": "Leak-proof design",
+        "3": "Easy to clean"
+      }
+    },
+    "46": {
+      "description": "500ml personal water bottle with compact, lightweight design for easy carrying.",
+      "features": {
+        "0": "500ml capacity",
+        "1": "Leak-proof design",
+        "2": "Lightweight material",
+        "3": "Easy to carry"
+      }
+    },
+    "47": {
+      "description": "LED desk lamp that saves energy with eye-protecting light.",
+      "features": {
+        "0": "Energy-efficient LED",
+        "1": "Eye-friendly lighting",
+        "2": "Adjustable brightness",
+        "3": "Flexible neck"
+      }
+    },
+    "48": {
+      "description": "Mini bookshelf for organizing books neatly and saving space.",
+      "features": {
+        "0": "Compact design",
+        "1": "Space-saving",
+        "2": "Sturdy construction",
+        "3": "Easy assembly"
+      }
+    },
+    "49": {
+      "description": "Magnetic whiteboard for marker writing and attaching papers with magnets.",
+      "features": {
+        "0": "Magnetic surface",
+        "1": "Dry-erase capability",
+        "2": "Durable frame",
+        "3": "Easy mounting"
+      }
+    },
+    "50": {
+      "description": "Compact handheld printer for quick and easy printing on the go.",
+      "features": {
+        "0": "Portable design",
+        "1": "Quick printing",
+        "2": "Wireless connectivity",
+        "3": "Rechargeable battery"
       }
     }
   }

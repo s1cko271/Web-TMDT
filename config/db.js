@@ -24,11 +24,26 @@ async function testConnection() {
     return true;
   } catch (error) {
     console.error('Database connection failed:', error.message);
+    console.error('Error details:', error);
     return false;
+  }
+}
+
+// Get connection function for external use
+async function getConnection() {
+  try {
+    return await pool.getConnection();
+  } catch (error) {
+    console.error('Failed to get database connection:', error.message);
+    throw error;
   }
 }
 
 // Call test connection
 testConnection();
 
-module.exports = pool;
+module.exports = {
+  pool,
+  getConnection,
+  testConnection
+};

@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useShopContext } from '../context/ShopContext';
 import { useTranslation } from 'react-i18next';
+import i18n from 'i18next';
+import { formatCurrency } from '../utils/currencyUtils';
 import './CheckoutPage.css';
 import './PaymentIcons.css';
 
@@ -35,6 +37,9 @@ const CheckoutPage = () => {
     expYear: '',
     cvv: ''
   });
+  
+  // Payment method state
+  const [paymentMethod, setPaymentMethod] = useState('visa');
   
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -187,84 +192,166 @@ const CheckoutPage = () => {
               <div className="form-section">
                 <h2 className="section-title">{t('checkoutPage.paymentInformation')}</h2>
                 
-                <div className="form-group">
-                  <label htmlFor="cardName">{t('checkoutPage.nameOnCard')}</label>
-                  <input
-                    type="text"
-                    id="cardName"
-                    name="cardName"
-                    value={formData.cardName}
-                    onChange={handleChange}
-                    required
-                  />
+                {/* Payment Method Selection */}
+                <div className="form-group payment-method-selection">
+                  <label>{t('checkoutPage.paymentMethod', 'Phương thức thanh toán')}:</label>
+                  <div className="payment-methods-options">
+                    <div className="payment-method-option">
+                      <input 
+                        type="radio" 
+                        id="visa" 
+                        name="paymentMethod" 
+                        value="visa" 
+                        checked={paymentMethod === 'visa'} 
+                        onChange={() => setPaymentMethod('visa')} 
+                      />
+                      <label htmlFor="visa" className="payment-method-label">
+                        <i className="fab fa-cc-visa"></i>
+                        <span>Visa</span>
+                      </label>
+                    </div>
+                    
+                    <div className="payment-method-option">
+                      <input 
+                        type="radio" 
+                        id="momo" 
+                        name="paymentMethod" 
+                        value="momo" 
+                        checked={paymentMethod === 'momo'} 
+                        onChange={() => setPaymentMethod('momo')} 
+                      />
+                      <label htmlFor="momo" className="payment-method-label">
+                        <span className="payment-icon momo"></span>
+                        <span>MoMo</span>
+                      </label>
+                    </div>
+                    
+                    <div className="payment-method-option">
+                      <input 
+                        type="radio" 
+                        id="zalopay" 
+                        name="paymentMethod" 
+                        value="zalopay" 
+                        checked={paymentMethod === 'zalopay'} 
+                        onChange={() => setPaymentMethod('zalopay')} 
+                      />
+                      <label htmlFor="zalopay" className="payment-method-label">
+                        <span className="payment-icon zalopay"></span>
+                        <span>ZaloPay</span>
+                      </label>
+                    </div>
+                    
+                    <div className="payment-method-option">
+                      <input 
+                        type="radio" 
+                        id="vnpay" 
+                        name="paymentMethod" 
+                        value="vnpay" 
+                        checked={paymentMethod === 'vnpay'} 
+                        onChange={() => setPaymentMethod('vnpay')} 
+                      />
+                      <label htmlFor="vnpay" className="payment-method-label">
+                        <span className="payment-icon vnpay"></span>
+                        <span>VNPAY</span>
+                      </label>
+                    </div>
+                  </div>
                 </div>
                 
-                <div className="form-group">
-                  <label htmlFor="cardNumber">{t('checkoutPage.cardNumber')}</label>
-                  <input
-                    type="text"
-                    id="cardNumber"
-                    name="cardNumber"
-                    value={formData.cardNumber}
-                    onChange={handleChange}
-                    placeholder="XXXX XXXX XXXX XXXX"
-                    required
-                  />
-                </div>
+                {/* Credit Card Information - Only shown when Visa is selected */}
+                {paymentMethod === 'visa' && (
+                  <div className="credit-card-info">
+                    <div className="form-group">
+                      <label htmlFor="cardName">{t('checkoutPage.nameOnCard')}</label>
+                      <input
+                        type="text"
+                        id="cardName"
+                        name="cardName"
+                        value={formData.cardName}
+                        onChange={handleChange}
+                        required={paymentMethod === 'visa'}
+                      />
+                    </div>
+                    
+                    <div className="form-group">
+                      <label htmlFor="cardNumber">{t('checkoutPage.cardNumber')}</label>
+                      <input
+                        type="text"
+                        id="cardNumber"
+                        name="cardNumber"
+                        value={formData.cardNumber}
+                        onChange={handleChange}
+                        placeholder="XXXX XXXX XXXX XXXX"
+                        required={paymentMethod === 'visa'}
+                      />
+                    </div>
+                    
+                    <div className="form-row">
+                      <div className="form-group">
+                        <label htmlFor="expMonth">{t('checkoutPage.expirationMonth')}</label>
+                        <select
+                          id="expMonth"
+                          name="expMonth"
+                          value={formData.expMonth}
+                          onChange={handleChange}
+                          required={paymentMethod === 'visa'}
+                        >
+                          <option value="">{t('checkoutPage.month')}</option>
+                          {Array.from({ length: 12 }, (_, i) => (
+                            <option key={i + 1} value={i + 1}>
+                              {i + 1}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                      
+                      <div className="form-group">
+                        <label htmlFor="expYear">{t('checkoutPage.expirationYear')}</label>
+                        <select
+                          id="expYear"
+                          name="expYear"
+                          value={formData.expYear}
+                          onChange={handleChange}
+                          required={paymentMethod === 'visa'}
+                        >
+                          <option value="">{t('checkoutPage.year')}</option>
+                          {Array.from({ length: 10 }, (_, i) => {
+                            const year = new Date().getFullYear() + i;
+                            return (
+                              <option key={year} value={year}>
+                                {year}
+                              </option>
+                            );
+                          })}
+                        </select>
+                      </div>
+                      
+                      <div className="form-group">
+                        <label htmlFor="cvv">{t('checkoutPage.cvv')}</label>
+                        <input
+                          type="text"
+                          id="cvv"
+                          name="cvv"
+                          value={formData.cvv}
+                          onChange={handleChange}
+                          placeholder="123"
+                          required={paymentMethod === 'visa'}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )}
                 
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="expMonth">{t('checkoutPage.expirationMonth')}</label>
-                    <select
-                      id="expMonth"
-                      name="expMonth"
-                      value={formData.expMonth}
-                      onChange={handleChange}
-                      required
-                    >
-                      <option value="">{t('checkoutPage.month')}</option>
-                      {Array.from({ length: 12 }, (_, i) => (
-                        <option key={i + 1} value={i + 1}>
-                          {i + 1}
-                        </option>
-                      ))}
-                    </select>
+                {/* Payment instructions for other methods */}
+                {paymentMethod !== 'visa' && (
+                  <div className="payment-instructions">
+                    <p className="payment-note">
+                      {paymentMethod === 'momo' && t('checkoutPage.momoInstructions', 'Bạn sẽ được chuyển đến ứng dụng MoMo để hoàn tất thanh toán sau khi đặt hàng.')}
+                      {paymentMethod === 'zalopay' && t('checkoutPage.zalopayInstructions', 'Bạn sẽ được chuyển đến ứng dụng ZaloPay để hoàn tất thanh toán sau khi đặt hàng.')}
+                      {paymentMethod === 'vnpay' && t('checkoutPage.vnpayInstructions', 'Bạn sẽ được chuyển đến cổng thanh toán VNPAY để hoàn tất thanh toán sau khi đặt hàng.')}
+                    </p>
                   </div>
-                  
-                  <div className="form-group">
-                    <label htmlFor="expYear">{t('checkoutPage.expirationYear')}</label>
-                    <select
-                      id="expYear"
-                      name="expYear"
-                      value={formData.expYear}
-                      onChange={handleChange}
-                      required
-                    >
-                      <option value="">{t('checkoutPage.year')}</option>
-                      {Array.from({ length: 10 }, (_, i) => {
-                        const year = new Date().getFullYear() + i;
-                        return (
-                          <option key={year} value={year}>
-                            {year}
-                          </option>
-                        );
-                      })}
-                    </select>
-                  </div>
-                  
-                  <div className="form-group">
-                    <label htmlFor="cvv">{t('checkoutPage.cvv')}</label>
-                    <input
-                      type="text"
-                      id="cvv"
-                      name="cvv"
-                      value={formData.cvv}
-                      onChange={handleChange}
-                      placeholder="123"
-                      required
-                    />
-                  </div>
-                </div>
+                )}
               </div>
               
               <div className="form-actions">
@@ -291,44 +378,40 @@ const CheckoutPage = () => {
                     <div className="item-name">{item.name}</div>
                     <div className="item-quantity">{t('checkoutPage.qty')} {item.quantity}</div>
                   </div>
-                  <div className="item-price">${(item.price * item.quantity).toFixed(2)}</div>
+                  <div className="item-price">{formatCurrency(item.price * item.quantity, i18n.language)}</div>
                 </div>
               ))}
             </div>
             
             <div className="summary-item">
               <span className="summary-label">{t('checkoutPage.subtotal')}</span>
-              <span className="summary-value">${subtotal.toFixed(2)}</span>
+              <span className="summary-value">{formatCurrency(subtotal, i18n.language)}</span>
             </div>
             
             <div className="summary-item">
               <span className="summary-label">{t('checkoutPage.shipping')}</span>
-              <span className="summary-value">${shipping.toFixed(2)}</span>
+              <span className="summary-value">{formatCurrency(shipping, i18n.language)}</span>
             </div>
             
             <div className="summary-item">
               <span className="summary-label">{t('checkoutPage.tax')}</span>
-              <span className="summary-value">${tax.toFixed(2)}</span>
+              <span className="summary-value">{formatCurrency(tax, i18n.language)}</span>
             </div>
             
             <div className="summary-divider"></div>
             
             <div className="summary-item total">
               <span className="summary-label">{t('checkoutPage.total')}</span>
-              <span className="summary-value">${total.toFixed(2)}</span>
+              <span className="summary-value">{formatCurrency(total, i18n.language)}</span>
             </div>
             
             <div className="payment-methods">
-              <p>{t('checkoutPage.weAccept')}</p>
+              <p>{t('checkoutPage.weAccept', 'Chúng tôi chấp nhận')}</p>
               <div className="payment-icons">
                 <i className="fab fa-cc-visa"></i>
-                <i className="fab fa-cc-mastercard"></i>
-                <i className="fab fa-cc-amex"></i>
-                <i className="fab fa-cc-paypal"></i>
-                <span className="payment-icon momo">MoMo</span>
-                <span className="payment-icon vnpay">VNPay</span>
-                <span className="payment-icon zalopay">ZaloPay</span>
-                <span className="payment-icon cod">COD</span>
+                <span className="payment-icon momo"></span>
+                <span className="payment-icon vnpay"></span>
+                <span className="payment-icon zalopay"></span>
               </div>
             </div>
           </div>

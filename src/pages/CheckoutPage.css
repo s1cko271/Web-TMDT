@@ -28,6 +28,82 @@
   margin-bottom: 30px;
 }
 
+/* Payment Method Selection Styles */
+.payment-method-selection {
+  margin-bottom: 20px;
+}
+
+.payment-methods-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.payment-method-option {
+  flex: 1;
+  min-width: 120px;
+}
+
+.payment-method-option input[type="radio"] {
+  display: none;
+}
+
+.payment-method-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.payment-method-label i,
+.payment-method-label .payment-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+  width: 60px;
+  height: 40px;
+  background-size: 80% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.payment-method-label span:not(.payment-icon) {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.payment-method-option input[type="radio"]:checked + .payment-method-label {
+  border-color: #4a6cf7;
+  background-color: #f0f5ff;
+}
+
+/* Payment Instructions */
+.payment-instructions {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  border-left: 4px solid #4a6cf7;
+}
+
+.payment-note {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Credit Card Information */
+.credit-card-info {
+  margin-top: 20px;
+}
+
 .section-title {
   font-size: 1.3rem;
   font-weight: 600;

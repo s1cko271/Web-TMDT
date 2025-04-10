@@ -46,11 +46,18 @@
   "productPage": {
     "filter": "Bộ lọc",
     "sort": "Sắp xếp",
+    "sortBy": "Sắp xếp theo",
+    "featured": "Nổi bật",
+    "priceLow": "Giá: Thấp đến cao",
+    "priceHigh": "Giá: Cao đến thấp",
     "price": "Giá",
     "rating": "Đánh giá",
     "addToCart": "Thêm vào giỏ hàng",
     "outOfStock": "Hết hàng",
     "quickView": "Xem nhanh",
+    "noProductsFound": "Không tìm thấy sản phẩm phù hợp với tiêu chí của bạn.",
+    "clearFilters": "Xóa bộ lọc",
+    "searchPlaceholder": "Tìm kiếm sản phẩm...",
     "description": "Mô tả",
     "features": "Tính năng",
     "reviews": "Đánh giá",
@@ -144,7 +151,49 @@
       "5": "Bút lông dầu",
       "6": "Bộ bút dạ quang",
       "7": "Băng xóa",
-      "8": "Bộ bút màu"
+      "8": "Bộ bút màu",
+      "9": "Bộ bút chì màu 24 màu",
+      "10": "Bộ bút sáp màu",
+      "11": "Thước kẻ trong suốt",
+      "12": "Thước tam giác",
+      "13": "Thước dẻo",
+      "14": "Compa vẽ",
+      "15": "Máy tính khoa học",
+      "16": "Bảng viết có dòng kẻ",
+      "17": "Sổ tay",
+      "18": "Giấy note dính",
+      "19": "Hộp đựng bút",
+      "20": "Kéo",
+      "21": "Hồ dán khô",
+      "22": "Keo dán lỏng",
+      "23": "Máy bấm kim",
+      "24": "Máy đục lỗ",
+      "25": "Kẹp giấy",
+      "26": "Folder đựng tài liệu",
+      "27": "Hộp đựng hồ sơ",
+      "28": "Đèn bàn",
+      "29": "Lịch để bàn",
+      "30": "Bảng trắng",
+      "31": "Bút viết bảng",
+      "32": "Túi đựng bút",
+      "33": "Hộp đựng bút chì",
+      "34": "Kẹp giấy nhỏ",
+      "35": "Bộ kẹp binder",
+      "36": "Hộp kim bấm",
+      "37": "Băng keo trong",
+      "38": "Băng keo hai mặt",
+      "39": "Băng keo giấy",
+      "40": "Giấy in",
+      "41": "Giấy màu",
+      "42": "Giấy kẻ ô",
+      "43": "Đánh dấu trang dính",
+      "44": "Tấm lót bàn",
+      "45": "Giá đựng bút",
+      "46": "Giá đỡ sách",
+      "47": "Bìa sách",
+      "48": "Kệ sách mini",
+      "49": "Bảng từ",
+      "50": "Máy in di động"
     },
     "1": {
       "description": "Tai nghe không dây chất lượng cao với công nghệ khử tiếng ồn và thời lượng pin 20 giờ. Hoàn hảo cho những người yêu nhạc và chuyên gia.",
@@ -216,6 +265,384 @@
         "1": "Mực chảy mượt mà",
         "2": "Đầu bút mảnh cho công việc chi tiết",
         "3": "Công thức mực không độc hại"
+      }
+    },
+    "9": {
+      "description": "Bộ 24 bút chì màu, chất lượng cao, dễ tô màu, phù hợp cho vẽ.",
+      "features": {
+        "0": "Màu sắc tươi sáng",
+        "1": "Tô màu mượt mà",
+        "2": "Chống gãy",
+        "3": "Dễ gọt"
+      }
+    },
+    "10": {
+      "description": "Bộ 12 bút sáp màu, dễ sử dụng, không lem, phù hợp cho trẻ em.",
+      "features": {
+        "0": "Màu sắc tươi sáng",
+        "1": "Không độc hại",
+        "2": "Dễ cầm cho bàn tay nhỏ",
+        "3": "Công thức có thể rửa sạch"
+      }
+    },
+    "11": {
+      "description": "Thước kẻ nhựa trong suốt 20cm, dễ nhìn xuyên qua để đo chính xác.",
+      "features": {
+        "0": "Chất liệu trong suốt",
+        "1": "Đo lường chính xác",
+        "2": "Nhựa bền",
+        "3": "Thiết kế nhẹ"
+      }
+    },
+    "12": {
+      "description": "Thước tam giác nhựa 45 độ, phù hợp cho học sinh vẽ hình học.",
+      "features": {
+        "0": "Góc 45 độ chính xác",
+        "1": "Vạch chia rõ ràng",
+        "2": "Chất liệu nhựa bền",
+        "3": "Cạnh mượt mà"
+      }
+    },
+    "13": {
+      "description": "Thước dẻo có thể uốn cong mà không bị gãy, thuận tiện cho việc vẽ hình.",
+      "features": {
+        "0": "Chất liệu linh hoạt",
+        "1": "Giữ nguyên hình dạng khi uốn cong",
+        "2": "Dễ sử dụng",
+        "3": "Lý tưởng cho đường cong"
+      }
+    },
+    "14": {
+      "description": "Compa vẽ đường tròn chính xác, đi kèm với ruột chì.",
+      "features": {
+        "0": "Vẽ đường tròn chính xác",
+        "1": "Bán kính có thể điều chỉnh",
+        "2": "Bao gồm ruột chì",
+        "3": "Cấu trúc kim loại bền"
+      }
+    },
+    "15": {
+      "description": "Máy tính Casio FX-570VN Plus với nhiều chức năng tính toán.",
+      "features": {
+        "0": "Nhiều chức năng tính toán",
+        "1": "Màn hình hiển thị tự nhiên",
+        "2": "Pin dùng lâu",
+        "3": "Được chấp nhận trong các kỳ thi"
+      }
+    },
+    "16": {
+      "description": "Bảng viết có dòng kẻ nhỏ giúp luyện viết dễ dàng hơn.",
+      "features": {
+        "0": "Bề mặt có dòng kẻ",
+        "1": "Kích thước nhỏ gọn",
+        "2": "Dễ xóa",
+        "3": "Cấu trúc bền"
+      }
+    },
+    "17": {
+      "description": "Bộ 10 viên phấn trắng, không bụi, dễ viết trên bảng đen.",
+      "features": {
+        "0": "Công thức không bụi",
+        "1": "Viết mượt mà",
+        "2": "Độ hiển thị cao",
+        "3": "Bền lâu"
+      }
+    },
+    "18": {
+      "description": "Bút viết bảng với mực đậm, dễ xóa.",
+      "features": {
+        "0": "Mực đậm",
+        "1": "Khô nhanh",
+        "2": "Dễ xóa",
+        "3": "Công thức không độc hại"
+      }
+    },
+    "19": {
+      "description": "Tẩy nhỏ, di động không làm rách giấy.",
+      "features": {
+        "0": "Kích thước nhỏ gọn",
+        "1": "Nhẹ nhàng với giấy",
+        "2": "Xóa sạch",
+        "3": "Chất liệu bền lâu"
+      }
+    },
+    "20": {
+      "description": "Kéo thép không gỉ với tay cầm nhựa chắc chắn để cắt giấy dễ dàng.",
+      "features": {
+        "0": "Lưỡi thép không gỉ",
+        "1": "Cầm nắm thoải mái",
+        "2": "Cạnh cắt sắc bén",
+        "3": "Cấu trúc bền"
+      }
+    },
+    "21": {
+      "description": "Hồ dán khô dạng thỏi, tiện lợi cho việc dán giấy và thủ công.",
+      "features": {
+        "0": "Dạng thỏi tiện lợi",
+        "1": "Không độc hại",
+        "2": "Dễ sử dụng",
+        "3": "Kết dính tốt"
+      }
+    },
+    "22": {
+      "description": "Keo dán lỏng 40ml, tiện lợi cho việc dán giấy và thủ công.",
+      "features": {
+        "0": "Dung tích 40ml",
+        "1": "Công thức không độc hại",
+        "2": "Dễ sử dụng",
+        "3": "Kết dính mạnh"
+      }
+    },
+    "23": {
+      "description": "Máy bấm kim chắc chắn, dễ sử dụng, phù hợp cho văn phòng và trường học.",
+      "features": {
+        "0": "Thiết kế chắc chắn",
+        "1": "Dễ sử dụng",
+        "2": "Bấm kim chính xác",
+        "3": "Chứa được nhiều kim"
+      }
+    },
+    "24": {
+      "description": "Máy đục lỗ giấy chắc chắn, dễ sử dụng cho hồ sơ và tài liệu.",
+      "features": {
+        "0": "Đục lỗ chính xác",
+        "1": "Thiết kế chắc chắn",
+        "2": "Dễ sử dụng",
+        "3": "Đục được nhiều tờ cùng lúc"
+      }
+    },
+    "25": {
+      "description": "Hộp 100 kẹp giấy để giữ tài liệu và giấy tờ ngăn nắp.",
+      "features": {
+        "0": "100 kẹp",
+        "1": "Kim loại bền",
+        "2": "Nhiều kích cỡ",
+        "3": "Lưu trữ ngăn nắp"
+      }
+    },
+    "26": {
+      "description": "Folder đựng tài liệu chắc chắn, bảo vệ giấy tờ khỏi nhăn và rách.",
+      "features": {
+        "0": "Chất liệu bền",
+        "1": "Bảo vệ tài liệu",
+        "2": "Thiết kế gọn gàng",
+        "3": "Nhiều màu sắc"
+      }
+    },
+    "27": {
+      "description": "Hộp đựng hồ sơ chắc chắn, tiện lợi cho việc lưu trữ và sắp xếp tài liệu.",
+      "features": {
+        "0": "Cấu trúc chắc chắn",
+        "1": "Dễ sắp xếp",
+        "2": "Dung tích lớn",
+        "3": "Thiết kế gọn gàng"
+      }
+    },
+    "28": {
+      "description": "Đèn bàn LED tiết kiệm năng lượng với ánh sáng bảo vệ mắt.",
+      "features": {
+        "0": "LED tiết kiệm năng lượng",
+        "1": "Ánh sáng thân thiện với mắt",
+        "2": "Độ sáng điều chỉnh được",
+        "3": "Cổ đèn linh hoạt"
+      }
+    },
+    "29": {
+      "description": "Lịch để bàn nhỏ gọn, tiện lợi cho việc theo dõi ngày tháng.",
+      "features": {
+        "0": "Thiết kế nhỏ gọn",
+        "1": "Hiển thị rõ ràng",
+        "2": "Dễ sử dụng",
+        "3": "Chất liệu bền"
+      }
+    },
+    "30": {
+      "description": "Bảng trắng nhỏ gọn, tiện lợi cho việc ghi chú và nhắc nhở.",
+      "features": {
+        "0": "Bề mặt trơn láng",
+        "1": "Dễ viết và xóa",
+        "2": "Khung chắc chắn",
+        "3": "Dễ lắp đặt"
+      }
+    },
+    "31": {
+      "description": "Bút viết bảng với mực đậm, dễ xóa, phù hợp cho bảng trắng.",
+      "features": {
+        "0": "Mực đậm",
+        "1": "Dễ xóa",
+        "2": "Nhiều màu sắc",
+        "3": "Không độc hại"
+      }
+    },
+    "32": {
+      "description": "Túi đựng bút bằng vải với nhiều ngăn, phù hợp cho học sinh và nhân viên văn phòng.",
+      "features": {
+        "0": "Nhiều ngăn",
+        "1": "Vải bền",
+        "2": "Thiết kế nhỏ gọn",
+        "3": "Dễ mang theo"
+      }
+    },
+    "33": {
+      "description": "Hộp đựng bút chì nhiều ngăn để lưu trữ bút và đồ dùng học tập một cách ngăn nắp.",
+      "features": {
+        "0": "Nhiều ngăn",
+        "1": "Cấu trúc bền",
+        "2": "Lưu trữ ngăn nắp",
+        "3": "Thiết kế nhỏ gọn"
+      }
+    },
+    "34": {
+      "description": "Hộp 100 kẹp giấy nhỏ để giữ tài liệu và giấy tờ ngăn nắp.",
+      "features": {
+        "0": "100 kẹp",
+        "1": "Kim loại bền",
+        "2": "Kích thước nhỏ gọn",
+        "3": "Tiện lợi"
+      }
+    },
+    "35": {
+      "description": "Bộ 50 kẹp binder để giữ chắc các tài liệu dày.",
+      "features": {
+        "0": "50 kẹp",
+        "1": "Giữ chắc",
+        "2": "Kim loại bền",
+        "3": "Thiết kế có thể tái sử dụng"
+      }
+    },
+    "36": {
+      "description": "Hộp 1000 kim bấm cho máy bấm kim tiêu chuẩn.",
+      "features": {
+        "0": "1000 kim",
+        "1": "Kích thước tiêu chuẩn",
+        "2": "Kim loại chất lượng",
+        "3": "Hiệu suất đáng tin cậy"
+      }
+    },
+    "37": {
+      "description": "Cuộn băng keo trong 1.8cm, phù hợp cho văn phòng và trường học.",
+      "features": {
+        "0": "Trong suốt",
+        "1": "Rộng 1.8cm",
+        "2": "Keo dính mạnh",
+        "3": "Dễ xé"
+      }
+    },
+    "38": {
+      "description": "Băng keo hai mặt 1.5cm, keo dính mạnh, tiện lợi cho nhiều mục đích sử dụng.",
+      "features": {
+        "0": "Keo dính hai mặt",
+        "1": "Rộng 1.5cm",
+        "2": "Kết dính mạnh",
+        "3": "Dễ sử dụng"
+      }
+    },
+    "39": {
+      "description": "Băng keo giấy đa năng, dễ xé và không để lại dấu keo.",
+      "features": {
+        "0": "Chất liệu giấy",
+        "1": "Dễ xé",
+        "2": "Không để lại dấu keo",
+        "3": "Đa năng"
+      }
+    },
+    "40": {
+      "description": "Giấy in A4 500 tờ, chất lượng cao, phù hợp cho in ấn và viết tay.",
+      "features": {
+        "0": "500 tờ",
+        "1": "Khổ A4",
+        "2": "Chất lượng cao",
+        "3": "Đa mục đích"
+      }
+    },
+    "41": {
+      "description": "Bộ giấy màu đa dạng cho thủ công và trang trí.",
+      "features": {
+        "0": "Nhiều màu sắc",
+        "1": "Giấy chất lượng",
+        "2": "Dễ cắt",
+        "3": "Hoàn hảo cho thủ công"
+      }
+    },
+    "42": {
+      "description": "Giấy kẻ ô vuông cho vẽ đồ thị và thiết kế.",
+      "features": {
+        "0": "Ô vuông đều",
+        "1": "Giấy chất lượng",
+        "2": "Lý tưởng cho đồ thị",
+        "3": "Dễ vẽ chính xác"
+      }
+    },
+    "43": {
+      "description": "Đánh dấu trang dính nhiều màu, tiện lợi cho sách và tài liệu.",
+      "features": {
+        "0": "Nhiều màu sắc",
+        "1": "Keo dính nhẹ",
+        "2": "Dễ tháo gỡ",
+        "3": "Tiện lợi"
+      }
+    },
+    "44": {
+      "description": "Tấm lót bàn lớn, bảo vệ bàn và tạo không gian làm việc thoải mái.",
+      "features": {
+        "0": "Kích thước lớn",
+        "1": "Chất liệu bền",
+        "2": "Bảo vệ bàn",
+        "3": "Dễ lau chùi"
+      }
+    },
+    "45": {
+      "description": "Giá đựng bút đa năng cho bàn làm việc gọn gàng.",
+      "features": {
+        "0": "Nhiều ngăn",
+        "1": "Thiết kế chắc chắn",
+        "2": "Dễ sắp xếp",
+        "3": "Tiết kiệm không gian"
+      }
+    },
+    "46": {
+      "description": "Giá đỡ sách kim loại chắc chắn, giữ sách đứng thẳng trên kệ.",
+      "features": {
+        "0": "Kim loại bền",
+        "1": "Thiết kế chắc chắn",
+        "2": "Giữ sách ngăn nắp",
+        "3": "Dễ sử dụng"
+      }
+    },
+    "47": {
+      "description": "Bìa sách nhựa trong suốt, bảo vệ sách khỏi bụi và hư hỏng.",
+      "features": {
+        "0": "Nhựa trong suốt",
+        "1": "Bảo vệ toàn diện",
+        "2": "Dễ lắp",
+        "3": "Bền lâu"
+      }
+    },
+    "48": {
+      "description": "Kệ sách mini để bàn, tiện lợi sắp xếp sách gọn gàng và tiết kiệm không gian.",
+      "features": {
+        "0": "Thiết kế nhỏ gọn",
+        "1": "Tiết kiệm không gian",
+        "2": "Cấu trúc chắc chắn",
+        "3": "Dễ lắp ráp"
+      }
+    },
+    "49": {
+      "description": "Bảng từ để viết bằng bút lông và gắn giấy tờ bằng nam châm.",
+      "features": {
+        "0": "Bề mặt từ tính",
+        "1": "Có thể viết và xóa",
+        "2": "Khung chắc chắn",
+        "3": "Dễ lắp đặt"
+      }
+    },
+    "50": {
+      "description": "Máy in di động nhỏ gọn cho việc in ấn nhanh chóng và dễ dàng khi di chuyển.",
+      "features": {
+        "0": "Thiết kế di động",
+        "1": "In nhanh",
+        "2": "Kết nối không dây",
+        "3": "Pin sạc"
       }
     }
   },

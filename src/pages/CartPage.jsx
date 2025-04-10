@@ -149,13 +149,9 @@ const CartPage = () => {
                 <p>{t('cartPage.weAccept', 'We Accept:')}</p>
                 <div className="payment-icons">
                   <i className="fab fa-cc-visa"></i>
-                  <i className="fab fa-cc-mastercard"></i>
-                  <i className="fab fa-cc-amex"></i>
-                  <i className="fab fa-cc-paypal"></i>
-                  <span className="payment-icon momo">MoMo</span>
-                  <span className="payment-icon vnpay">VNPay</span>
-                  <span className="payment-icon zalopay">ZaloPay</span>
-                  <span className="payment-icon cod">COD</span>
+                  <span className="payment-icon momo"></span>
+                  <span className="payment-icon vnpay"></span>
+                  <span className="payment-icon zalopay"></span>
                 </div>
               </div>
             </div>
