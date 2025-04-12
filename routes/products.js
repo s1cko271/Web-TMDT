@@ -28,6 +28,22 @@ router.get('/', async (req, res) => {
       queryParams.push(`%${search}%`);
     }
     
+    // Thêm điều kiện lọc theo danh mục
+    if (category) {
+      // Nếu category là ID (số)
+      if (!isNaN(category)) {
+        query += ' AND category_id = ?';
+        queryParams.push(parseInt(category));
+      } else {
+        // Nếu category là tên danh mục (chuỗi)
+        const [categoryResult] = await pool.query('SELECT id FROM categories WHERE name = ?', [category]);
+        if (categoryResult && categoryResult.length > 0) {
+          query += ' AND category_id = ?';
+          queryParams.push(categoryResult[0].id);
+        }
+      }
+    }
+    
     // Thêm điều kiện lọc theo khoảng giá
     if (minPrice) {
       query += ' AND unit_price >= ?';

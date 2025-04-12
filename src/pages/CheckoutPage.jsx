@@ -4,6 +4,7 @@ import { useShopContext } from '../context/ShopContext';
 import { useTranslation } from 'react-i18next';
 import i18n from 'i18next';
 import { formatCurrency } from '../utils/currencyUtils';
+import QRCodePaymentNew from '../components/QRCodePaymentNew';
 import './CheckoutPage.css';
 import './PaymentIcons.css';
 
@@ -49,18 +50,34 @@ const CheckoutPage = () => {
     });
   };
   
+  // Trạng thái thanh toán
+  const [paymentStatus, setPaymentStatus] = useState('pending'); // pending, processing, completed, failed
+  const [paymentOrderId, setPaymentOrderId] = useState(null);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // In a real app, this would process the payment and create an order
     
-    if (selectedItems.length > 0) {
-      // Process the order and remove only the selected items from cart
-      selectedItems.forEach(item => removeFromCart(item.id));
-      alert(t('checkoutPage.orderSuccess'));
-      navigate('/');
-    } else {
+    if (selectedItems.length === 0) {
       alert(t('checkoutPage.noItemsSelected'));
+      return;
     }
+    
+    // Nếu phương thức thanh toán là QR (momo hoặc zalopay), kiểm tra trạng thái thanh toán
+    if ((paymentMethod === 'momo' || paymentMethod === 'zalopay') && paymentStatus !== 'completed') {
+      alert(t('checkoutPage.pleaseCompletePayment', 'Vui lòng hoàn tất thanh toán bằng cách quét mã QR'));
+      return;
+    }
+    
+    // Xử lý đơn hàng và xóa các mặt hàng đã chọn khỏi giỏ hàng
+    selectedItems.forEach(item => removeFromCart(item.id));
+    alert(t('checkoutPage.orderSuccess'));
+    navigate('/');
+  };
+  
+  // Xử lý khi thanh toán QR hoàn tất
+  const handlePaymentComplete = (orderId) => {
+    setPaymentStatus('completed');
+    setPaymentOrderId(orderId);
   };
 
   
@@ -345,11 +362,17 @@ const CheckoutPage = () => {
                 {/* Payment instructions for other methods */}
                 {paymentMethod !== 'visa' && (
                   <div className="payment-instructions">
-                    <p className="payment-note">
-                      {paymentMethod === 'momo' && t('checkoutPage.momoInstructions', 'Bạn sẽ được chuyển đến ứng dụng MoMo để hoàn tất thanh toán sau khi đặt hàng.')}
-                      {paymentMethod === 'zalopay' && t('checkoutPage.zalopayInstructions', 'Bạn sẽ được chuyển đến ứng dụng ZaloPay để hoàn tất thanh toán sau khi đặt hàng.')}
-                      {paymentMethod === 'vnpay' && t('checkoutPage.vnpayInstructions', 'Bạn sẽ được chuyển đến cổng thanh toán VNPAY để hoàn tất thanh toán sau khi đặt hàng.')}
-                    </p>
+                    {(paymentMethod === 'momo' || paymentMethod === 'zalopay') ? (
+                      <QRCodePaymentNew 
+                        paymentMethod={paymentMethod} 
+                        amount={total} 
+                        onPaymentComplete={handlePaymentComplete}
+                      />
+                    ) : (
+                      <p className="payment-note">
+                        {paymentMethod === 'vnpay' && t('checkoutPage.vnpayInstructions', 'Bạn sẽ được chuyển đến cổng thanh toán VNPAY để hoàn tất thanh toán sau khi đặt hàng.')}
+                      </p>
+                    )}
                   </div>
                 )}
               </div>

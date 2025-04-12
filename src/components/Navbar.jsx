@@ -4,11 +4,14 @@ import { useTranslation } from 'react-i18next';
 import { useShopContext } from '../context/ShopContext';
 import { useAuthContext } from '../context/AuthContext';
 import LanguageSelector from './LanguageSelector';
+import axios from 'axios';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+  const [categories, setCategories] = useState([]);
+  const [categoriesLoading, setCategoriesLoading] = useState(true);
   const { cart, selectedItems } = useShopContext();
   const { user, logout, isAuthenticated } = useAuthContext();
   
@@ -30,6 +33,23 @@ const Navbar = () => {
     setIsUserMenuOpen(false);
   };
 
+  // Fetch categories from API
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        setCategoriesLoading(true);
+        const response = await axios.get('http://localhost:5000/api/categories');
+        setCategories(response.data);
+      } catch (err) {
+        console.error('Error fetching categories:', err);
+      } finally {
+        setCategoriesLoading(false);
+      }
+    };
+    
+    fetchCategories();
+  }, []);
+  
   // Add useEffect to log any potential issues
   useEffect(() => {
     console.log('Navbar rendered');
@@ -62,10 +82,17 @@ const Navbar = () => {
             <li className="dropdown">
               <span className="dropdown-toggle">{t('navbar.categories')}</span>
               <ul className="dropdown-menu">
-                <li><Link to="/category/Electronics" onClick={() => setIsMenuOpen(false)}>{t('navbar.electronics')}</Link></li>
-                <li><Link to="/category/Fashion" onClick={() => setIsMenuOpen(false)}>{t('navbar.fashion')}</Link></li>
-                <li><Link to="/category/Home & Kitchen" onClick={() => setIsMenuOpen(false)}>{t('navbar.homeAndKitchen')}</Link></li>
-                <li><Link to="/category/Beauty" onClick={() => setIsMenuOpen(false)}>{t('navbar.beauty')}</Link></li>
+                {categoriesLoading ? (
+                  <li>Loading...</li>
+                ) : (
+                  categories.map(category => (
+                    <li key={category.id}>
+                      <Link to={`/category/${category.name}`} onClick={() => setIsMenuOpen(false)}>
+                        {category.name}
+                      </Link>
+                    </li>
+                  ))
+                )}
               </ul>
             </li>
           </ul>

@@ -38,7 +38,15 @@ const ProductCard = ({ product }) => {
     <div className="product-card">
       <Link to={`/products/${id}`} className="product-link">
         <div className="product-image-container">
-          <img src={image} alt={t(`products.names.${id}`, name)} className="product-image" />
+          <img 
+            src={image} 
+            alt={t(`products.names.${id}`, name)} 
+            className="product-image" 
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = '/images/sp1.jpg'; // Ảnh dự phòng khi không tải được ảnh chính
+            }}
+          />
           <div className="product-overlay">
             <button className="quick-view-btn">{t('productPage.quickView', 'Quick View')}</button>
           </div>

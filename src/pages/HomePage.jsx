@@ -6,22 +6,37 @@ import ProductCard from '../components/ProductCard';
 import CategoryCard from '../components/CategoryCard';
 import './HomePage.css';
 
-// Sample data for featured categories
-const categories = [
-  { id: 1, name: 'Electronics', count: 120, image: 'https://images.unsplash.com/photo-1498049794561-7780e7231661?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80' },
-  { id: 2, name: 'Clothing', count: 85, image: 'https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80' },
-  { id: 3, name: 'Home & Kitchen', count: 67, image: 'https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1168&q=80' },
-  { id: 4, name: 'Beauty', count: 43, image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80' },
-];
-
 
 
 const HomePage = () => {
   const { t } = useTranslation();
   const [featuredProducts, setFeaturedProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [categoriesLoading, setCategoriesLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [categoriesError, setCategoriesError] = useState(null);
   
+  // Fetch featured products from API
+  // Fetch categories from API
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        setCategoriesLoading(true);
+        const response = await axios.get('http://localhost:5000/api/categories');
+        setCategories(response.data);
+        setCategoriesError(null);
+      } catch (err) {
+        console.error('Error fetching categories:', err);
+        setCategoriesError('Failed to load categories');
+      } finally {
+        setCategoriesLoading(false);
+      }
+    };
+    
+    fetchCategories();
+  }, []);
+
   // Fetch featured products from API
   useEffect(() => {
     const fetchFeaturedProducts = async () => {
@@ -76,11 +91,21 @@ const HomePage = () => {
       <section className="featured-categories">
         <div className="container">
           <h2 className="section-title">{t('homePage.shopByCategory', 'Shop by Category')}</h2>
-          <div className="categories-grid">
-            {categories.map(category => (
-              <CategoryCard key={category.id} category={category} />
-            ))}
-          </div>
+          {categoriesLoading ? (
+            <div className="loading-message">
+              <p>Loading categories...</p>
+            </div>
+          ) : categoriesError ? (
+            <div className="error-message">
+              <p>{categoriesError}</p>
+            </div>
+          ) : (
+            <div className="categories-grid">
+              {categories.map(category => (
+                <CategoryCard key={category.id} category={category} />
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

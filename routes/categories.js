@@ -6,38 +6,191 @@ const { pool } = require('../config/db');
 router.get('/', async (req, res) => {
   try {
     // Lấy danh sách các danh mục từ cơ sở dữ liệu
-    // Vì bảng school_supplies chưa có cột category, chúng ta sẽ tạo một danh sách cố định
-    const categories = [
-      { id: 1, name: 'Electronics', image: 'https://images.unsplash.com/photo-1498049794561-7780e7231661?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80' },
-      { id: 2, name: 'Clothing', image: 'https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80' },
-      { id: 3, name: 'Home & Kitchen', image: 'https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1168&q=80' },
-      { id: 4, name: 'Beauty', image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80' },
-      { id: 5, name: 'School Supplies', image: '/images/sp1.jpg' }
-    ];
+    const [categories] = await pool.query('SELECT id, name, description, image_url FROM categories');
     
-    res.json(categories);
+    if (!categories || categories.length === 0) {
+      // Trả về mảng rỗng nếu không có danh mục
+      return res.json([]);
+    }
+    
+    // Kiểm tra cấu trúc bảng school_supplies
+    let categoryField = 'category_id';
+    let hasValidCategoryField = true;
+    
+    try {
+      // Thử truy vấn với category_id
+      await pool.query('SELECT 1 FROM school_supplies WHERE category_id = ? LIMIT 1', [1]);
+    } catch (err) {
+      if (err.message.includes('Unknown column')) {
+        // Nếu không có cột category_id, thử với tên cột khác
+        categoryField = 'categories_id';
+        try {
+          await pool.query('SELECT 1 FROM school_supplies WHERE categories_id = ? LIMIT 1', [1]);
+        } catch (innerErr) {
+          if (innerErr.message.includes('Unknown column')) {
+            // Nếu cả hai đều không tồn tại, đánh dấu là không có trường hợp lệ
+            hasValidCategoryField = false;
+          }
+        }
+      } else if (err.message.includes('doesn\'t exist')) {
+        // Nếu bảng không tồn tại
+        hasValidCategoryField = false;
+      }
+    }
+    
+    // Nếu không có trường hợp lệ, trả về danh mục không có số lượng sản phẩm
+    if (!hasValidCategoryField) {
+      const simpleCategories = categories.map(category => ({
+        id: category.id,
+        name: category.name,
+        description: category.description,
+        image: category.image_url,
+        count: 0
+      }));
+      return res.json(simpleCategories);
+    }
+    
+    // Đếm số lượng sản phẩm trong mỗi danh mục với tên cột đúng
+    const categoriesWithCount = await Promise.all(categories.map(async (category) => {
+      try {
+        const [products] = await pool.query(`SELECT COUNT(*) as count FROM school_supplies WHERE ${categoryField} = ?`, [category.id]);
+        return {
+          id: category.id,
+          name: category.name,
+          description: category.description,
+          image: category.image_url,
+          count: products[0].count
+        };
+      } catch (err) {
+        // Nếu có lỗi khi đếm sản phẩm, trả về count = 0
+        return {
+          id: category.id,
+          name: category.name,
+          description: category.description,
+          image: category.image_url,
+          count: 0
+        };
+      }
+    }));
+    
+    res.json(categoriesWithCount);
   } catch (error) {
     console.error('Error fetching categories:', error.message);
-    res.status(500).json({ message: 'Server error' });
+    // Trả về mảng rỗng thay vì lỗi 500 để tránh lỗi hiển thị trên frontend
+    res.json([]);
   }
 });
 
 // GET products by category
 router.get('/:categoryName/products', async (req, res) => {
   try {
-    const categoryName = req.params.categoryName;
+    const categoryName = decodeURIComponent(req.params.categoryName);
+    console.log('Fetching products for category:', categoryName);
     
-    // Vì chưa có cột category trong bảng school_supplies, chúng ta sẽ giả định tất cả sản phẩm đều thuộc danh mục "School Supplies"
-    if (categoryName.toLowerCase() === 'school supplies') {
-      const [rows] = await pool.query('SELECT * FROM school_supplies');
-      res.json(rows);
+    // Tìm category_id dựa trên tên danh mục
+    const [category] = await pool.query('SELECT id FROM categories WHERE name = ?', [categoryName]);
+    
+    if (category && category.length > 0) {
+      const categoryId = category[0].id;
+      
+      // Kiểm tra cấu trúc bảng school_supplies
+      let categoryField = 'category_id';
+      let hasValidCategoryField = true;
+      
+      try {
+        // Thử truy vấn với category_id
+        await pool.query('SELECT 1 FROM school_supplies WHERE category_id = ? LIMIT 1', [1]);
+      } catch (err) {
+        if (err.message.includes('Unknown column')) {
+          // Nếu không có cột category_id, thử với tên cột khác
+          categoryField = 'categories_id';
+          try {
+            await pool.query('SELECT 1 FROM school_supplies WHERE categories_id = ? LIMIT 1', [1]);
+          } catch (innerErr) {
+            if (innerErr.message.includes('Unknown column') || innerErr.message.includes('doesn\'t exist')) {
+              // Nếu cả hai đều không tồn tại hoặc bảng không tồn tại
+              hasValidCategoryField = false;
+            }
+          }
+        } else if (err.message.includes('doesn\'t exist')) {
+          // Nếu bảng không tồn tại
+          hasValidCategoryField = false;
+        }
+      }
+      
+      if (!hasValidCategoryField) {
+        // Trả về mảng rỗng nếu không có trường hợp lệ
+        return res.json([]);
+      }
+      
+      try {
+        console.log(`Executing query: SELECT * FROM school_supplies WHERE ${categoryField} = ${categoryId}`);
+        const [products] = await pool.query(`SELECT * FROM school_supplies WHERE ${categoryField} = ?`, [categoryId]);
+        console.log(`Found ${products.length} products for category ID ${categoryId}`);
+        res.json(products);
+      } catch (err) {
+        console.error('Error querying products:', err.message);
+        res.json([]);
+      }
     } else {
-      // Trả về mảng rỗng cho các danh mục khác
+      // Trả về mảng rỗng nếu không tìm thấy danh mục
       res.json([]);
     }
   } catch (error) {
     console.error('Error fetching products by category:', error.message);
-    res.status(500).json({ message: 'Server error' });
+    // Trả về mảng rỗng thay vì lỗi 500 để tránh lỗi hiển thị trên frontend
+    res.json([]);
+  }
+});
+
+// GET products by category ID
+router.get('/id/:categoryId/products', async (req, res) => {
+  try {
+    const categoryId = req.params.categoryId;
+    
+    // Kiểm tra cấu trúc bảng school_supplies
+    let categoryField = 'category_id';
+    let hasValidCategoryField = true;
+    
+    try {
+      // Thử truy vấn với category_id
+      await pool.query('SELECT 1 FROM school_supplies WHERE category_id = ? LIMIT 1', [1]);
+    } catch (err) {
+      if (err.message.includes('Unknown column')) {
+        // Nếu không có cột category_id, thử với tên cột khác
+        categoryField = 'categories_id';
+        try {
+          await pool.query('SELECT 1 FROM school_supplies WHERE categories_id = ? LIMIT 1', [1]);
+        } catch (innerErr) {
+          if (innerErr.message.includes('Unknown column') || innerErr.message.includes('doesn\'t exist')) {
+            // Nếu cả hai đều không tồn tại hoặc bảng không tồn tại
+            hasValidCategoryField = false;
+          }
+        }
+      } else if (err.message.includes('doesn\'t exist')) {
+        // Nếu bảng không tồn tại
+        hasValidCategoryField = false;
+      }
+    }
+    
+    if (!hasValidCategoryField) {
+      // Trả về mảng rỗng nếu không có trường hợp lệ
+      return res.json([]);
+    }
+    
+    try {
+      console.log(`Attempting to fetch products for category ID: ${categoryId} using field: ${categoryField}`);
+      const [products] = await pool.query(`SELECT * FROM school_supplies WHERE ${categoryField} = ?`, [categoryId]);
+      console.log(`Found ${products.length} products for category ID ${categoryId}`);
+      res.json(products);
+    } catch (err) {
+      console.error('Error querying products:', err.message);
+      res.json([]);
+    }
+  } catch (error) {
+    console.error('Error fetching products by category ID:', error.message);
+    // Trả về mảng rỗng thay vì lỗi 500 để tránh lỗi hiển thị trên frontend
+    res.json([]);
   }
 });
 

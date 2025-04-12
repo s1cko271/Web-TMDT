@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import axios from 'axios';
 import './Footer.css';
 
 const Footer = () => {
   const { t } = useTranslation();
+  const [categories, setCategories] = useState([]);
+  
+  // Fetch categories from API
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/api/categories');
+        setCategories(response.data);
+      } catch (err) {
+        console.error('Error fetching categories for footer:', err);
+        setCategories([]);
+      }
+    };
+    
+    fetchCategories();
+  }, []);
   
   return (
     <footer className="footer">
@@ -37,11 +54,23 @@ const Footer = () => {
           <div className="footer-section">
             <h3 className="footer-title">{t('navbar.categories', 'Categories')}</h3>
             <ul className="footer-links">
-              <li><a href="#">{t('navbar.electronics', 'Electronics')}</a></li>
-              <li><a href="#">{t('footer.clothing', 'Clothing')}</a></li>
-              <li><a href="#">{t('navbar.homeAndKitchen', 'Home & Kitchen')}</a></li>
-              <li><a href="#">{t('footer.beautyPersonalCare', 'Beauty & Personal Care')}</a></li>
-              <li><a href="#">{t('footer.sportsOutdoors', 'Sports & Outdoors')}</a></li>
+              {categories.length > 0 ? (
+                categories.map((category) => (
+                  <li key={category.id}>
+                    <Link to={`/products?category=${encodeURIComponent(category.name)}`}>
+                      {category.name}
+                    </Link>
+                  </li>
+                ))
+              ) : (
+                <>
+                  <li><a href="#">{t('navbar.electronics', 'Electronics')}</a></li>
+                  <li><a href="#">{t('footer.clothing', 'Clothing')}</a></li>
+                  <li><a href="#">{t('navbar.homeAndKitchen', 'Home & Kitchen')}</a></li>
+                  <li><a href="#">{t('footer.beautyPersonalCare', 'Beauty & Personal Care')}</a></li>
+                  <li><a href="#">{t('footer.sportsOutdoors', 'Sports & Outdoors')}</a></li>
+                </>
+              )}
             </ul>
           </div>
           

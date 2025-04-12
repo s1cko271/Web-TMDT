@@ -87,7 +87,7 @@ The following environment variables are required:
 ```
 DB_HOST=localhost
 DB_USER=root
-DB_PASSWORD=your_password
+DB_PASSWORD=27012003
 DB_NAME=school_store
 DB_PORT=3306
 PORT=5000

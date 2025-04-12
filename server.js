@@ -13,6 +13,7 @@ const productRoutes = require('./routes/products');
 const categoryRoutes = require('./routes/categories');
 const cartRoutes = require('./routes/cart');
 const userRoutes = require('./routes/users');
+const paymentRoutes = require('./routes/payments');
 
 // Initialize express app
 const app = express();
@@ -27,6 +28,7 @@ app.use('/api/products', productRoutes);
 app.use('/api/categories', categoryRoutes);
 app.use('/api/cart', cartRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/payments', paymentRoutes);
 
 // Default route
 app.get('/', (req, res) => {
