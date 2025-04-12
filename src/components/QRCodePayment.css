@@ -1,0 +1,174 @@
+.qr-payment-container {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.qr-payment-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.qr-code-wrapper {
+  background-color: white;
+  border-radius: 8px;
+  padding: 15px;
+  display: inline-block;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.qr-code-image {
+  max-width: 200px;
+  height: auto;
+}
+
+.qr-payment-instructions {
+  margin-bottom: 20px;
+}
+
+.instruction-text {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.amount-text {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.qr-payment-steps {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 80px;
+}
+
+.step-number {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #4a6cf7;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.step p {
+  font-size: 0.85rem;
+  text-align: center;
+  margin: 0;
+}
+
+.qr-payment-note {
+  background-color: #e8f4ff;
+  border-left: 4px solid #4a6cf7;
+  padding: 10px;
+  text-align: left;
+  border-radius: 4px;
+  margin-top: 15px;
+}
+
+.qr-payment-note p {
+  margin: 0;
+}
+
+/* Styles for loading state */
+.qr-loading {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Styles for error state */
+.qr-error {
+  padding: 15px;
+  text-align: center;
+  color: #e74c3c;
+}
+
+.retry-btn {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #4a6cf7;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Styles for payment success */
+.payment-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.payment-success i {
+  font-size: 48px;
+  color: #2ecc71;
+  margin-bottom: 10px;
+}
+
+.payment-success p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2ecc71;
+}
+
+/* Styles for simulate payment button (demo only) */
+.simulate-btn {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.simulate-btn:hover {
+  background-color: #219653;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .qr-code-image {
+    max-width: 150px;
+  }
+  
+  .qr-payment-steps {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .step {
+    flex-direction: row;
+    max-width: 100%;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .step-number {
+    margin-bottom: 0;
+  }
+}
