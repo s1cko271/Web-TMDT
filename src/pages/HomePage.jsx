@@ -4,6 +4,9 @@ import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import ProductCard from '../components/ProductCard';
 import CategoryCard from '../components/CategoryCard';
+import Banner from '../components/Banner';
+import PromotionBanner from '../components/PromotionBanner';
+import DiscountBanner from '../components/DiscountBanner';
 import './HomePage.css';
 
 
@@ -74,6 +77,20 @@ const HomePage = () => {
   
   return (
     <div className="home-page">
+      {/* Banner Slider Section */}
+      <section className="banner-section">
+        <div className="container">
+          <Banner />
+        </div>
+      </section>
+
+      {/* Promotion Banner Section */}
+      <section className="promotion-section">
+        <div className="container">
+          <PromotionBanner />
+        </div>
+      </section>
+      
       {/* Hero Section */}
       <section className="hero">
         <div className="container hero-container">
@@ -109,6 +126,9 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Discount Banner Section */}
+      <DiscountBanner />
+      
       {/* Featured Products */}
       <section className="featured-products">
         <div className="container">

@@ -13,28 +13,18 @@ router.get('/', async (req, res) => {
       return res.json([]);
     }
     
-    // Kiểm tra cấu trúc bảng school_supplies
-    let categoryField = 'category_id';
+    // Sử dụng trường category_id vì đã được xác nhận trong update_categories_execute.js
+    const categoryField = 'category_id';
     let hasValidCategoryField = true;
     
     try {
       // Thử truy vấn với category_id
       await pool.query('SELECT 1 FROM school_supplies WHERE category_id = ? LIMIT 1', [1]);
     } catch (err) {
-      if (err.message.includes('Unknown column')) {
-        // Nếu không có cột category_id, thử với tên cột khác
-        categoryField = 'categories_id';
-        try {
-          await pool.query('SELECT 1 FROM school_supplies WHERE categories_id = ? LIMIT 1', [1]);
-        } catch (innerErr) {
-          if (innerErr.message.includes('Unknown column')) {
-            // Nếu cả hai đều không tồn tại, đánh dấu là không có trường hợp lệ
-            hasValidCategoryField = false;
-          }
-        }
-      } else if (err.message.includes('doesn\'t exist')) {
-        // Nếu bảng không tồn tại
+      if (err.message.includes('Unknown column') || err.message.includes('doesn\'t exist')) {
+        // Nếu không tồn tại trường hoặc bảng không tồn tại
         hasValidCategoryField = false;
+        console.error('Error: category_id field not found in school_supplies table');
       }
     }
     
@@ -93,28 +83,18 @@ router.get('/:categoryName/products', async (req, res) => {
     if (category && category.length > 0) {
       const categoryId = category[0].id;
       
-      // Kiểm tra cấu trúc bảng school_supplies
-      let categoryField = 'category_id';
+      // Sử dụng trường category_id vì đã được xác nhận trong update_categories_execute.js
+      const categoryField = 'category_id';
       let hasValidCategoryField = true;
       
       try {
         // Thử truy vấn với category_id
         await pool.query('SELECT 1 FROM school_supplies WHERE category_id = ? LIMIT 1', [1]);
       } catch (err) {
-        if (err.message.includes('Unknown column')) {
-          // Nếu không có cột category_id, thử với tên cột khác
-          categoryField = 'categories_id';
-          try {
-            await pool.query('SELECT 1 FROM school_supplies WHERE categories_id = ? LIMIT 1', [1]);
-          } catch (innerErr) {
-            if (innerErr.message.includes('Unknown column') || innerErr.message.includes('doesn\'t exist')) {
-              // Nếu cả hai đều không tồn tại hoặc bảng không tồn tại
-              hasValidCategoryField = false;
-            }
-          }
-        } else if (err.message.includes('doesn\'t exist')) {
-          // Nếu bảng không tồn tại
+        if (err.message.includes('Unknown column') || err.message.includes('doesn\'t exist')) {
+          // Nếu không tồn tại trường hoặc bảng không tồn tại
           hasValidCategoryField = false;
+          console.error('Error: category_id field not found in school_supplies table');
         }
       }
       
@@ -148,27 +128,17 @@ router.get('/id/:categoryId/products', async (req, res) => {
   try {
     const categoryId = req.params.categoryId;
     
-    // Kiểm tra cấu trúc bảng school_supplies
-    let categoryField = 'category_id';
+    // Sử dụng trực tiếp trường category_id vì đã được xác nhận trong update_categories_execute.js
+    const categoryField = 'category_id';
     let hasValidCategoryField = true;
     
     try {
       // Thử truy vấn với category_id
       await pool.query('SELECT 1 FROM school_supplies WHERE category_id = ? LIMIT 1', [1]);
     } catch (err) {
-      if (err.message.includes('Unknown column')) {
-        // Nếu không có cột category_id, thử với tên cột khác
-        categoryField = 'categories_id';
-        try {
-          await pool.query('SELECT 1 FROM school_supplies WHERE categories_id = ? LIMIT 1', [1]);
-        } catch (innerErr) {
-          if (innerErr.message.includes('Unknown column') || innerErr.message.includes('doesn\'t exist')) {
-            // Nếu cả hai đều không tồn tại hoặc bảng không tồn tại
-            hasValidCategoryField = false;
-          }
-        }
-      } else if (err.message.includes('doesn\'t exist')) {
-        // Nếu bảng không tồn tại
+      if (err.message.includes('Unknown column') || err.message.includes('doesn\'t exist')) {
+        // Nếu không tồn tại trường hoặc bảng không tồn tại
+        console.error('Error: category_id field not found in school_supplies table');
         hasValidCategoryField = false;
       }
     }

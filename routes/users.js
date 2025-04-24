@@ -3,6 +3,7 @@ const router = express.Router();
 const { pool } = require('../config/db');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const emailService = require('../utils/email');
 
 // Tạo bảng users nếu chưa tồn tại
 async function setupUsersTable() {
@@ -64,6 +65,24 @@ router.post('/register', async (req, res) => {
       process.env.JWT_SECRET || 'your_jwt_secret',
       { expiresIn: '1d' }
     );
+
+    // Tạo đối tượng user để gửi email
+    const user = {
+      id: result.insertId,
+      name,
+      email,
+      address,
+      phone
+    };
+
+    // Gửi email xác nhận đăng ký
+    try {
+      await emailService.sendRegistrationEmail(user);
+      console.log(`Email xác nhận đăng ký đã được gửi đến ${email}`);
+    } catch (emailError) {
+      console.error('Không thể gửi email xác nhận đăng ký:', emailError);
+      // Không trả về lỗi cho người dùng, chỉ ghi log lỗi
+    }
 
     res.status(201).json({
       id: result.insertId,

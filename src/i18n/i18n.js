@@ -52,7 +52,8 @@ viTranslation.checkoutPage = {
   qrNote: 'Đơn hàng sẽ được xác nhận tự động sau khi thanh toán thành công',
   qrInstructions: {
     momo: 'Quét mã QR bằng ứng dụng MoMo để thanh toán',
-    zalopay: 'Quét mã QR bằng ứng dụng ZaloPay để thanh toán'
+    zalopay: 'Quét mã QR bằng ứng dụng ZaloPay để thanh toán',
+    vnpay: 'Quét mã QR bằng ứng dụng VNPAY để thanh toán'
   },
   qrSteps: {
     step1: 'Mở ứng dụng',

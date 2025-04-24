@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import momoQR from '../assets/payment-icons/momo-qr.svg';
 import zalopayQR from '../assets/payment-icons/zalopay-qr.svg';
+import vnpayQR from '../assets/payment-icons/vnpay-qr.svg';
 import './QRCodePayment.css';
 
 const QRCodePayment = ({ paymentMethod, amount }) => {
@@ -23,6 +24,13 @@ const QRCodePayment = ({ paymentMethod, amount }) => {
           title: 'ZaloPay',
           color: '#0068ff',
           instructions: t('checkoutPage.qrInstructions.zalopay', 'Quét mã QR bằng ứng dụng ZaloPay để thanh toán')
+        };
+      case 'vnpay':
+        return {
+          qrImage: vnpayQR,
+          title: 'VNPAY',
+          color: '#e50019',
+          instructions: t('checkoutPage.qrInstructions.vnpay', 'Quét mã QR bằng ứng dụng VNPAY để thanh toán')
         };
       default:
         return null;

@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { pool } = require('../config/db');
+const emailService = require('../utils/email');
 
 // Tạo bảng carts và cart_items nếu chưa tồn tại
 async function setupCartTables() {

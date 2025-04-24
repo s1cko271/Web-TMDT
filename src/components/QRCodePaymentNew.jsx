@@ -26,6 +26,12 @@ const QRCodePaymentNew = ({ paymentMethod, amount, onPaymentComplete }) => {
           color: '#0068ff',
           instructions: t('checkoutPage.qrInstructions.zalopay', 'Quét mã QR bằng ứng dụng ZaloPay để thanh toán')
         };
+      case 'vnpay':
+        return {
+          title: 'VNPAY',
+          color: '#e50019',
+          instructions: t('checkoutPage.qrInstructions.vnpay', 'Quét mã QR bằng ứng dụng VNPAY để thanh toán')
+        };
       default:
         return null;
     }

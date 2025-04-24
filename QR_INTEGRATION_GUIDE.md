@@ -53,6 +53,10 @@ Hệ thống thanh toán QR bao gồm các thành phần chính sau:
    ZALOPAY_APP_ID=xxx
    ZALOPAY_KEY1=xxx
    ZALOPAY_KEY2=xxx
+   
+   # VNPAY
+   VNPAY_TMN_CODE=xxx
+   VNPAY_HASH_SECRET=xxx
    ```
 
 ### 2.3. Tạo Component Frontend
@@ -68,7 +72,7 @@ Hệ thống thanh toán QR bao gồm các thành phần chính sau:
 
 ## 3. Luồng thanh toán
 
-1. **Khách hàng chọn phương thức thanh toán** (MoMo, ZaloPay)
+1. **Khách hàng chọn phương thức thanh toán** (MoMo, ZaloPay, VNPAY)
 2. **Frontend gọi API để tạo mã QR**
 3. **Backend tạo mã QR và trả về cho Frontend**
 4. **Frontend hiển thị mã QR cho khách hàng**
